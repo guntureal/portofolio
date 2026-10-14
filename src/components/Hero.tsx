@@ -13,7 +13,7 @@ export default function Hero() {
       <Reveal delay={100}>
         <h1 className="font-serif-v leading-[1.25] tracking-tight" style={{ color: 'var(--ink)', fontSize: 'clamp(44px, 7.5vw, 88px)' }}>
           <span className="block pb-1">
-            <span style={{ opacity: 0.6 }}>“</span> Halo, Saya{' '}
+            <span style={{ opacity: 0.6 }}>“</span> Guntur Putra{' '}
             <span className="mx-2 inline-block align-middle">
               <Image
                 src="/profile.webp"
@@ -24,10 +24,10 @@ export default function Hero() {
                 className="inline-block h-16 w-16 rounded-2xl object-cover sm:h-20 sm:w-20 lg:h-24 lg:w-24"
               />
             </span>{' '}
-            <em style={{ color: 'var(--accent)' }}>Guntur</em>
+            <em style={{ color: 'var(--accent)' }}>Hermanto</em>
           </span>
           <span className="block pb-1">
-            seorang{' '}
+            Web Developer{' '}
             <span className="mx-2 inline-block align-middle">
               <Image
                 src="/favicon.png"
@@ -38,11 +38,11 @@ export default function Hero() {
                 className="inline-block h-14 w-14 rounded-xl object-cover sm:h-16 sm:w-16 lg:h-20 lg:w-20"
               />
             </span>{' '}
-            <em style={{ color: 'var(--accent)' }}>Developer</em>
+            <em style={{ color: 'var(--accent)' }}>&amp; SEO Specialist</em>
           </span>
           <span className="block pb-1">yang</span>
           <span className="block pb-1">
-            membangun{' '}
+            Membangun{' '}
             <span className="mx-2 inline-block align-middle">
               <Image
                 src="/favicon.png"
@@ -53,7 +53,7 @@ export default function Hero() {
                 className="inline-block h-12 w-12 rounded-lg object-cover sm:h-14 sm:w-14 lg:h-[72px] lg:w-[72px]"
               />
             </span>{' '}
-            <em style={{ color: 'var(--accent)' }}>Tools</em>
+            <em style={{ color: 'var(--accent)' }}>Tools Web</em>
             <span style={{ opacity: 0.6 }}>”</span>
           </span>
         </h1>
@@ -68,22 +68,20 @@ export default function Hero() {
           </p>
           <p>
             <a
-              href={`mailto:${person.email}`}
+              href="#proyek"
               className="accent-link font-serif-v italic"
               style={{ fontSize: 'clamp(24px, 3vw, 30px)' }}
             >
-              Kirim Email
+              Project
             </a>
           </p>
           <p>
             <a
-              href={person.website}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#kontak"
               className="accent-link font-serif-v italic"
               style={{ fontSize: 'clamp(24px, 3vw, 30px)' }}
             >
-              gwntur.com
+              Kontak
             </a>
           </p>
         </div>
