@@ -1,15 +1,19 @@
-/* Reveal — fade-in halus saat scroll (Google/Microsoft minimal) */
 'use client';
 
 import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 
-interface RevealProps {
+/**
+ * Vellum Reveal — entrance animation via Intersection Observer.
+ */
+export default function Reveal({
+  children,
+  delay = 0,
+  className = '',
+}: {
   children: ReactNode;
-  className?: string;
   delay?: number;
-}
-
-export default function Reveal({ children, className = '', delay = 0 }: RevealProps) {
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -19,20 +23,19 @@ export default function Reveal({ children, className = '', delay = 0 }: RevealPr
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.classList.add('is-visible');
-            io.unobserve(e.target);
+            el.classList.add('is-visible');
+            io.unobserve(el);
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
-  const style = { '--reveal-delay': `${delay}ms` } as CSSProperties;
   return (
-    <div ref={ref} className={`reveal ${className}`} style={style}>
+    <div ref={ref} className={`reveal ${className}`} style={{ '--reveal-delay': `${delay}ms` } as CSSProperties}>
       {children}
     </div>
   );
