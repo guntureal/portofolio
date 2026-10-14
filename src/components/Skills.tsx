@@ -1,87 +1,55 @@
-/* Skills — Google/Microsoft style: filter chip + Material cards + bar */
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
+/* Skills — Vellum Editorial: grup label + daftar dipisah " · " emas, selang-seling italic */
 import { skills } from '@/data/portfolio';
 import Reveal from './Reveal';
 
-const categories = ['Semua', 'Pengembangan', 'SEO', 'Konten', 'Desain'] as const;
+const groups: { label: string; category: string }[] = [
+  { label: 'Pengembangan Web', category: 'Pengembangan' },
+  { label: 'SEO', category: 'SEO' },
+  { label: 'Konten & Desain', category: 'Konten' },
+];
 
 export default function Skills() {
-  const [filter, setFilter] = useState<(typeof categories)[number]>('Semua');
-  const [animate, setAnimate] = useState(false);
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setAnimate(true);
-            io.disconnect();
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  const visible = skills.filter((s) => filter === 'Semua' || s.category === filter);
-
   return (
-    <section ref={ref} id="keahlian" className="section-alt">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+    <section id="keahlian" style={{ borderTop: '1px solid var(--line)' }}>
+      <div className="mx-auto max-w-4xl px-4 py-24 sm:px-6 md:py-32">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'var(--accent)' }}>
-            Keahlian
+          <p className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
+            <span style={{ color: 'var(--gold)' }}>✦</span> Keahlian
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Keahlian</h2>
-          <p className="mt-3 max-w-xl" style={{ color: 'var(--muted)' }}>
-            Diukur dari hasil nyata: tools yang dipakai ribuan orang dan artikel yang terindeks dengan baik.
-          </p>
+          <h2
+            className="font-serif-v mt-4 leading-tight tracking-tight"
+            style={{ color: 'var(--ink)', fontSize: 'clamp(36px, 5vw, 60px)' }}
+          >
+            Apa yang Saya <em style={{ color: 'var(--gold)' }}>Kuasai</em>
+          </h2>
         </Reveal>
-        <Reveal delay={100}>
-          <div className="mt-6 flex flex-wrap gap-2" role="tablist" aria-label="Filter keahlian">
-            {categories.map((c) => (
-              <button
-                key={c}
-                type="button"
-                role="tab"
-                aria-selected={filter === c}
-                onClick={() => setFilter(c)}
-                className={`filter-chip px-4 py-2 text-sm ${filter === c ? 'active' : ''}`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-        </Reveal>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          {visible.map((skill) => (
-            <div key={skill.name} className="mat-card p-5">
-              <div className="flex items-baseline justify-between">
-                <span className="font-semibold">{skill.name}</span>
-                <span className="text-sm" style={{ color: 'var(--muted)' }}>
-                  {skill.level}% · {skill.category}
-                </span>
-              </div>
-              <div
-                className="mt-3 h-2.5 overflow-hidden rounded-full"
-                style={{ background: 'var(--surface-2)' }}
-                role="progressbar"
-                aria-valuenow={skill.level}
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-label={skill.name}
-              >
-                <div className="skill-bar-fill h-full" style={{ width: animate ? `${skill.level}%` : '0%' }} />
-              </div>
-            </div>
-          ))}
+
+        <div className="mt-14 space-y-14">
+          {groups.map((g, gi) => {
+            const items = skills.filter(
+              (s) => s.category === g.category || (g.category === 'Konten' && s.category === 'Desain')
+            );
+            return (
+              <Reveal key={g.label} delay={gi * 100}>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
+                    <span style={{ color: 'var(--gold)' }}>✦</span> {g.label}
+                  </p>
+                  <p
+                    className="font-serif-v mt-4 leading-relaxed"
+                    style={{ color: 'var(--body-2)', fontSize: 'clamp(24px, 3vw, 30px)' }}
+                  >
+                    {items.map((s, i) => (
+                      <span key={s.name}>
+                        {i > 0 && <span style={{ color: 'var(--gold)' }}> · </span>}
+                        {i % 2 === 1 ? <em>{s.name}</em> : s.name}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
