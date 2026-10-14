@@ -1,100 +1,113 @@
-/* Portofolio Guntur — Google x Microsoft Corporate */
+/* Portofolio Guntur — Vellum Editorial */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bodyB: #ffffff;
-  --surface: #f8f9fa;
-  --surface-2: #f1f3f4;
-  --textC: #202124;
-  --muted: #5f6368;
-  --border: #dadce0;
-  --card-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-  --card-shadow-hover: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
-  --accent: #1a73e8;
-  --accent-hover: #1765cc;
+  --bg: #f5f2ef;
+  --ink: #2a2622;
+  --body: #544d45;
+  --body-2: #625950;
+  --body-3: #70665c;
+  --dim: #8c8073;
+  --dim-2: #a3998f;
+  --gold: #d9a326;
+  --gold-hover: #c39322;
+  --line: #e5e0dc;
+  --timeline: #ded9d3;
+  --btn: #000000;
 }
 
 .dark {
-  --bodyB: #1f1f1f;
-  --surface: #2b2b2b;
-  --surface-2: #333333;
-  --textC: #e8eaed;
-  --muted: #9aa0a6;
-  --border: #3c4043;
-  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 3px 1px rgba(0, 0, 0, 0.3);
-  --card-shadow-hover: 0 1px 3px rgba(0, 0, 0, 0.5), 0 4px 8px 3px rgba(0, 0, 0, 0.35);
-  --accent: #8ab4f8;
-  --accent-hover: #aecbfa;
+  --bg: #1a1815;
+  --ink: #e5e0dc;
+  --body: #c9bfb6;
+  --body-2: #b5aa9e;
+  --body-3: #a3998f;
+  --dim: #8c8073;
+  --dim-2: #70665c;
+  --gold: #d9a326;
+  --gold-hover: #e8b53a;
+  --line: #3a352f;
+  --timeline: #3a352f;
+  --btn: #e5e0dc;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 60px;
 }
 
 body {
-  background: var(--bodyB);
-  color: var(--textC);
-  font-family: 'Google Sans', 'Segoe UI', Inter, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--body);
+  font-family: 'Rubik', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #1a73e8;
+  background: var(--gold);
   color: #fff;
 }
 
-/* ============ Material-style card ============ */
-.mat-card {
-  background: var(--bodyB);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: var(--card-shadow);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-.mat-card:hover {
-  box-shadow: var(--card-shadow-hover);
-  transform: translateY(-2px);
+/* ============ Serif ============ */
+.font-serif-v {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
-/* ============ Buttons ============ */
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3);
+/* ============ Gold link ============ */
+.gold-link {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
-.btn-primary:hover {
-  background: var(--accent-hover);
-  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
-}
-.btn-outline {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-weight: 500;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-.btn-outline:hover {
-  background: var(--surface);
-  border-color: var(--accent);
+.gold-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold-hover);
 }
 
-/* ============ Section alternate background ============ */
-.section-alt {
-  background: var(--surface);
+/* ============ Nav link ============ */
+.nav-link {
+  color: var(--body);
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: var(--gold);
 }
 
-/* ============ Reveal: fade-in only ============ */
+/* ============ Side nav ============ */
+.side-nav-item {
+  transition: color 0.3s ease;
+}
+.side-nav-item .side-star {
+  color: #c9bfb6;
+  transition: color 0.3s ease;
+}
+.side-nav-item .side-label {
+  color: var(--dim);
+  transition: color 0.3s ease;
+}
+.side-nav-item:hover .side-star {
+  color: var(--dim);
+}
+.side-nav-item:hover .side-label {
+  color: var(--gold);
+}
+.side-nav-item.active .side-star {
+  color: var(--gold);
+}
+.side-nav-item.active .side-label {
+  color: var(--ink);
+  font-style: italic;
+}
+
+/* ============ Reveal entrance ============ */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
   transition-delay: var(--reveal-delay, 0ms);
 }
 .reveal.is-visible {
@@ -102,47 +115,21 @@ body {
   transform: none;
 }
 
-/* ============ Skill bar ============ */
-.skill-bar-fill {
-  background: var(--accent);
-  border-radius: 9999px;
-  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+/* ============ Floating inline photo ============ */
+.float-photo {
+  animation: float-y 4s ease-in-out infinite;
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-/* ============ Filter chip ============ */
-.filter-chip {
-  border: 1px solid var(--border);
-  border-radius: 9999px;
-  font-weight: 500;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+/* ============ Project title hover ============ */
+.project-title {
+  transition: color 0.3s ease;
 }
-.filter-chip:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.filter-chip.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
-/* ============ Tag chip ============ */
-.tag-chip {
-  background: var(--surface-2);
-  color: var(--muted);
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-/* ============ Nav link ============ */
-.nav-link {
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-.nav-link:hover {
-  color: var(--accent);
+.project-title:hover {
+  color: var(--gold);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -151,11 +138,10 @@ body {
     transform: none;
     transition: none;
   }
-  .mat-card,
-  .btn-primary,
-  .btn-outline,
-  .skill-bar-fill,
-  .filter-chip {
+  .float-photo {
+    animation: none;
+  }
+  .gold-link, .nav-link, .side-nav-item, .project-title {
     transition: none !important;
   }
   html {
