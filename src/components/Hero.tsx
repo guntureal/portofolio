@@ -30,8 +30,8 @@ export default function Hero() {
             <em style={{ color: 'var(--accent)' }}>Selamat</em>{' '}
             <span className="mx-2 inline-block align-middle">
               <Image
-                src="/hero-ai-chat.webp"
-                alt="Asisten AI gwntur.com"
+                src="/hero-developer-1.webp"
+                alt="Developer mengetik kode di depan laptop"
                 width={80}
                 height={80}
                 priority
@@ -45,8 +45,8 @@ export default function Hero() {
             <em style={{ color: 'var(--accent)' }}>Portofolio</em>{' '}
             <span className="mx-2 inline-block align-middle">
               <Image
-                src="/hero-stiker.webp"
-                alt="Stiker WhatsApp gwntur.com"
+                src="/hero-developer-2.webp"
+                alt="Laptop menampilkan kode program"
                 width={72}
                 height={72}
                 priority
