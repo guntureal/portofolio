@@ -1,36 +1,38 @@
-/* Portofolio Guntur — Vellum Editorial */
+/* Portofolio Guntur — Vellum Editorial (aksen biru #0066cc) */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #f5f2ef;
-  --ink: #2a2622;
-  --body: #544d45;
-  --body-2: #625950;
-  --body-3: #70665c;
-  --dim: #8c8073;
-  --dim-2: #a3998f;
-  --gold: #d9a326;
-  --gold-hover: #c39322;
-  --line: #e5e0dc;
-  --timeline: #ded9d3;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --ink: #1a1a2e;
+  --body: #45455c;
+  --body-2: #55556b;
+  --body-3: #6b6b80;
+  --dim: #8a8aa0;
+  --dim-2: #a3a3b5;
+  --accent: #0066cc;
+  --accent-hover: #0052a3;
+  --line: #e8ecf1;
+  --timeline: #d9e2ec;
   --btn: #000000;
 }
 
 .dark {
-  --bg: #1a1815;
-  --ink: #e5e0dc;
-  --body: #c9bfb6;
-  --body-2: #b5aa9e;
-  --body-3: #a3998f;
-  --dim: #8c8073;
-  --dim-2: #70665c;
-  --gold: #d9a326;
-  --gold-hover: #e8b53a;
-  --line: #3a352f;
-  --timeline: #3a352f;
-  --btn: #e5e0dc;
+  --bg: #14171f;
+  --bg-alt: #1a1d28;
+  --ink: #eef1f6;
+  --body: #c3c8d6;
+  --body-2: #b0b5c6;
+  --body-3: #9aa0b4;
+  --dim: #8a8fa3;
+  --dim-2: #6e7488;
+  --accent: #4d9fff;
+  --accent-hover: #7ab8ff;
+  --line: #2c3140;
+  --timeline: #2c3140;
+  --btn: #eef1f6;
 }
 
 html {
@@ -47,7 +49,7 @@ body {
 }
 
 ::selection {
-  background: var(--gold);
+  background: var(--accent);
   color: #fff;
 }
 
@@ -56,16 +58,16 @@ body {
   font-family: 'Playfair Display', Georgia, serif;
 }
 
-/* ============ Gold link ============ */
-.gold-link {
+/* ============ Accent link ============ */
+.accent-link {
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 2px solid var(--gold);
+  border-bottom: 2px solid var(--accent);
   transition: color 0.3s ease, border-color 0.3s ease;
 }
-.gold-link:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold-hover);
+.accent-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent-hover);
 }
 
 /* ============ Nav link ============ */
@@ -74,7 +76,7 @@ body {
   transition: color 0.3s ease;
 }
 .nav-link:hover {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 /* ============ Side nav ============ */
@@ -82,7 +84,7 @@ body {
   transition: color 0.3s ease;
 }
 .side-nav-item .side-star {
-  color: #c9bfb6;
+  color: #c3c8d6;
   transition: color 0.3s ease;
 }
 .side-nav-item .side-label {
@@ -93,10 +95,10 @@ body {
   color: var(--dim);
 }
 .side-nav-item:hover .side-label {
-  color: var(--gold);
+  color: var(--accent);
 }
 .side-nav-item.active .side-star {
-  color: var(--gold);
+  color: var(--accent);
 }
 .side-nav-item.active .side-label {
   color: var(--ink);
@@ -115,21 +117,12 @@ body {
   transform: none;
 }
 
-/* ============ Floating inline photo ============ */
-.float-photo {
-  animation: float-y 4s ease-in-out infinite;
-}
-@keyframes float-y {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
 /* ============ Project title hover ============ */
 .project-title {
   transition: color 0.3s ease;
 }
 .project-title:hover {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -138,10 +131,7 @@ body {
     transform: none;
     transition: none;
   }
-  .float-photo {
-    animation: none;
-  }
-  .gold-link, .nav-link, .side-nav-item, .project-title {
+  .accent-link, .nav-link, .side-nav-item, .project-title {
     transition: none !important;
   }
   html {
