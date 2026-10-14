@@ -1,68 +1,53 @@
-/* Contact — Google/Microsoft style: Material card + social grid */
+/* Contact — Vellum Editorial: penutup/footer, judul + email underline emas + sosial */
 import { person, socials } from '@/data/portfolio';
 import Reveal from './Reveal';
 
 export default function Contact() {
   return (
-    <section id="kontak" className="section-alt">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+    <section id="kontak" style={{ borderTop: '1px solid var(--line)' }}>
+      <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 md:py-32">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'var(--accent)' }}>
-            Kontak
+          <p className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
+            <span style={{ color: 'var(--gold)' }}>✦</span> Kontak
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Kontak</h2>
-          <p className="mt-3 max-w-xl" style={{ color: 'var(--muted)' }}>
+          <h2
+            className="font-serif-v mt-4 leading-tight tracking-tight"
+            style={{ color: 'var(--ink)', fontSize: 'clamp(36px, 5vw, 60px)' }}
+          >
+            ✦ Mari <em style={{ color: 'var(--gold)' }}>Berdiskusi</em>
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl leading-relaxed" style={{ color: 'var(--body)' }}>
             Ada ide tools, kolaborasi, atau pertanyaan seputar SEO dan pengembangan web? Silakan hubungi saya.
           </p>
         </Reveal>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <Reveal>
-            <div className="mat-card flex h-full flex-col items-start justify-center p-6 sm:p-8">
-              <h3 className="text-xl font-bold">Mari Terhubung</h3>
-              <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>
-                Respon tercepat melalui email. Untuk update tools dan tutorial, ikuti media sosial saya.
-              </p>
-              <a href={`mailto:${person.email}`} className="btn-primary mt-6 px-7 py-3 text-sm">
-                Kirim Email
-              </a>
-              <p className="mt-5 text-sm" style={{ color: 'var(--muted)' }}>
-                Email:{' '}
-                <a href={`mailto:${person.email}`} className="font-medium hover:underline" style={{ color: 'var(--accent)' }}>
-                  {person.email}
-                </a>
-              </p>
-              <p className="text-sm" style={{ color: 'var(--muted)' }}>
-                Website:{' '}
-                <a
-                  href={person.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium hover:underline"
-                  style={{ color: 'var(--accent)' }}
-                >
-                  gwntur.com
-                </a>
-              </p>
-            </div>
-          </Reveal>
-          <div className="grid gap-4 sm:grid-cols-2">
+        <Reveal delay={150}>
+          <p className="mt-10">
+            <a href={`mailto:${person.email}`} className="gold-link font-serif-v text-xl sm:text-2xl">
+              {person.email}
+            </a>
+          </p>
+        </Reveal>
+        <Reveal delay={250}>
+          <nav className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Media sosial">
             {socials.map((s, i) => (
-              <Reveal key={s.label} delay={i * 80}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mat-card block h-full px-5 py-4"
-                >
-                  <span className="block font-semibold">{s.label}</span>
-                  <span className="text-sm" style={{ color: 'var(--muted)' }}>
-                    {s.handle}
+              <span key={s.label} className="flex items-center gap-5">
+                {i > 0 && (
+                  <span style={{ color: 'var(--gold)' }} aria-hidden>
+                    ·
                   </span>
+                )}
+                <a href={s.href} target="_blank" rel="noopener noreferrer" className="gold-link text-sm">
+                  {s.label}
                 </a>
-              </Reveal>
+              </span>
             ))}
-          </div>
-        </div>
+          </nav>
+        </Reveal>
+        <Reveal delay={350}>
+          <p className="mt-16 text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
+            ✦ {person.name} · gwntur.com · © {new Date().getFullYear()}
+          </p>
+        </Reveal>
       </div>
     </section>
   );
