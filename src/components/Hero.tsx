@@ -1,1 +1,94 @@
-LyogSGVybyDigJQgVmVsbHVtIEVkaXRvcmlhbDogc3RydWt0dXIgcGVyc2lzIHRlbXBsYXRlIChrdXRpcCwgaGVhZGxpbmUgNCBiYXJpcywgMyBmb3RvIGlubGluZSwga29udGFrIHZlcnRpa2FsKSAqLwppbXBvcnQgSW1hZ2UgZnJvbSAnbmV4dC9pbWFnZSc7CmltcG9ydCB7IHBlcnNvbiB9IGZyb20gJ0AvZGF0YS9wb3J0Zm9saW8nOwppbXBvcnQgUmV2ZWFsIGZyb20gJy4vUmV2ZWFsJzsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEhlcm8oKSB7CiAgcmV0dXJuICgKICAgIDxzZWN0aW9uCiAgICAgIGlkPSJhdGFzIgogICAgICBzdHlsZT17eyBiYWNrZ3JvdW5kOiAndmFyKC0taGVyby1iZyknIH19CiAgICA+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJteC1hdXRvIGZsZXggbWF4LXctNnhsIGZsZXgtY29sIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBweC00IHB5LTIwIHRleHQtY2VudGVyIHNtOnB4LTYgbWQ6cHktMjgiPgogICAgICA8UmV2ZWFsIGRlbGF5PXsxMDB9PgogICAgICAgIDxoMSBjbGFzc05hbWU9ImZvbnQtc2VyaWYtdiBsZWFkaW5nLVsxLjI1XSB0cmFja2luZy10aWdodCIgc3R5bGU9e3sgY29sb3I6ICd2YXIoLS1pbmspJywgZm9udFNpemU6ICdjbGFtcCg0NHB4LCA3LjV2dywgODhweCknIH19PgogICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJibG9jayBwYi0xIj4KICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgb3BhY2l0eTogMC42IH19PuKAnDwvc3Bhbj4gSGFsbywgU2F5YXsnICd9CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ibXgtMiBpbmxpbmUtYmxvY2sgYWxpZ24tbWlkZGxlIj4KICAgICAgICAgICAgICA8SW1hZ2UKICAgICAgICAgICAgICAgIHNyYz0iL3Byb2ZpbGUud2VicCIKICAgICAgICAgICAgICAgIGFsdD0iRm90byBHdW50dXIgUHV0cmEgSGVybWFudG8iCiAgICAgICAgICAgICAgICB3aWR0aD17OTZ9CiAgICAgICAgICAgICAgICBoZWlnaHQ9ezk2fQogICAgICAgICAgICAgICAgcHJpb3JpdHkKICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iaW5saW5lLWJsb2NrIGgtMTYgdy0xNiByb3VuZGVkLTJ4bCBvYmplY3QtY292ZXIgc206aC0yMCBzbTp3LTIwIGxnOmgtMjQgbGc6dy0yNCIKICAgICAgICAgICAgICAvPgogICAgICAgICAgICA8L3NwYW4+eycgJ30KICAgICAgICAgICAgPGVtIHN0eWxlPXt7IGNvbG9yOiAndmFyKC0tYWNjZW50KScgfX0+R3VudHVyPC9lbT4KICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iYmxvY2sgcGItMSI+CiAgICAgICAgICAgIHNlb3Jhbmd7JyAnfQogICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9Im14LTIgaW5saW5lLWJsb2NrIGFsaWduLW1pZGRsZSI+CiAgICAgICAgICAgICAgPEltYWdlCiAgICAgICAgICAgICAgICBzcmM9Ii9mYXZpY29uLnBuZyIKICAgICAgICAgICAgICAgIGFsdD0iTG9nbyBnd250dXIuY29tIgogICAgICAgICAgICAgICAgd2lkdGg9ezgwfQogICAgICAgICAgICAgICAgaGVpZ2h0PXs4MH0KICAgICAgICAgICAgICAgIHByaW9yaXR5CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9ImlubGluZS1ibG9jayBoLTE0IHctMTQgcm91bmRlZC14bCBvYmplY3QtY292ZXIgc206aC0xNiBzbTp3LTE2IGxnOmgtMjAgbGc6dy0yMCIKICAgICAgICAgICAgICAvPgogICAgICAgICAgICA8L3NwYW4+eycgJ30KICAgICAgICAgICAgPGVtIHN0eWxlPXt7IGNvbG9yOiAndmFyKC0tYWNjZW50KScgfX0+RGV2ZWxvcGVyPC9lbT4KICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iYmxvY2sgcGItMSI+eWFuZzwvc3Bhbj4KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iYmxvY2sgcGItMSI+CiAgICAgICAgICAgIG1lbWJhbmd1bnsnICd9CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ibXgtMiBpbmxpbmUtYmxvY2sgYWxpZ24tbWlkZGxlIj4KICAgICAgICAgICAgICA8SW1hZ2UKICAgICAgICAgICAgICAgIHNyYz0iL2Zhdmljb24ucG5nIgogICAgICAgICAgICAgICAgYWx0PSJMb2dvIGd3bnR1ci5jb20iCiAgICAgICAgICAgICAgICB3aWR0aD17NzJ9CiAgICAgICAgICAgICAgICBoZWlnaHQ9ezcyfQogICAgICAgICAgICAgICAgcHJpb3JpdHkKICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iaW5saW5lLWJsb2NrIGgtMTIgdy0xMiByb3VuZGVkLWxnIG9iamVjdC1jb3ZlciBzbTpoLTE0IHNtOnctMTQgbGc6aC1bNzJweF0gbGc6dy1bNzJweF0iCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgPC9zcGFuPnsnICd9CiAgICAgICAgICAgIDxlbSBzdHlsZT17eyBjb2xvcjogJ3ZhcigtLWFjY2VudCknIH19PlRvb2xzPC9lbT4KICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgb3BhY2l0eTogMC42IH19PuKAnTwvc3Bhbj4KICAgICAgICAgIDwvc3Bhbj4KICAgICAgICA8L2gxPgogICAgICA8L1JldmVhbD4KCiAgICAgIDxSZXZlYWwgZGVsYXk9ezQwMH0+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTE2IHNwYWNlLXktNiI+CiAgICAgICAgICA8cD4KICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJmb250LXNlcmlmLXYgaXRhbGljIiBzdHlsZT17eyBjb2xvcjogJ3ZhcigtLWRpbSknLCBmb250U2l6ZTogJ2NsYW1wKDI0cHgsIDN2dywgMzBweCknIH19PgogICAgICAgICAgICAgIHtwZXJzb24ubG9jYXRpb259CiAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIDwvcD4KICAgICAgICAgIDxwPgogICAgICAgICAgICA8YQogICAgICAgICAgICAgIGhyZWY9e2BtYWlsdG86JHtwZXJzb24uZW1haWx9YH0KICAgICAgICAgICAgICBjbGFzc05hbWU9ImFjY2VudC1saW5rIGZvbnQtc2VyaWYtdiBpdGFsaWMiCiAgICAgICAgICAgICAgc3R5bGU9e3sgZm9udFNpemU6ICdjbGFtcCgyNHB4LCAzdncsIDMwcHgpJyB9fQogICAgICAgICAgICA+CiAgICAgICAgICAgICAgS2lyaW0gRW1haWwKICAgICAgICAgICAgPC9hPgogICAgICAgICAgPC9wPgogICAgICAgICAgPHA+CiAgICAgICAgICAgIDxhCiAgICAgICAgICAgICAgaHJlZj17cGVyc29uLndlYnNpdGV9CiAgICAgICAgICAgICAgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICAgICAgICAgcmVsPSJub29wZW5lciBub3JlZmVycmVyIgogICAgICAgICAgICAgIGNsYXNzTmFtZT0iYWNjZW50LWxpbmsgZm9udC1zZXJpZi12IGl0YWxpYyIKICAgICAgICAgICAgICBzdHlsZT17eyBmb250U2l6ZTogJ2NsYW1wKDI0cHgsIDN2dywgMzBweCknIH19CiAgICAgICAgICAgID4KICAgICAgICAgICAgICBnd250dXIuY29tCiAgICAgICAgICAgIDwvYT4KICAgICAgICAgIDwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgPC9SZXZlYWw+CiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgogICk7Cn0K
+/* Hero — Vellum Editorial: struktur persis template (kutip, headline 4 baris, 3 foto inline, kontak vertikal) */
+import Image from 'next/image';
+import { person } from '@/data/portfolio';
+import Reveal from './Reveal';
+
+export default function Hero() {
+  return (
+    <section
+      id="atas"
+      style={{ background: 'var(--hero-bg)' }}
+    >
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 md:py-28">
+      <Reveal delay={100}>
+        <h1 className="font-serif-v leading-[1.25] tracking-tight" style={{ color: 'var(--ink)', fontSize: 'clamp(44px, 7.5vw, 88px)' }}>
+          <span className="block pb-1">
+            <span style={{ opacity: 0.6 }}>“</span> Halo, Saya{' '}
+            <span className="mx-2 inline-block align-middle">
+              <Image
+                src="/profile.webp"
+                alt="Foto Guntur Putra Hermanto"
+                width={96}
+                height={96}
+                priority
+                className="inline-block h-16 w-16 rounded-2xl object-cover sm:h-20 sm:w-20 lg:h-24 lg:w-24"
+              />
+            </span>{' '}
+            <em style={{ color: 'var(--accent)' }}>Guntur</em>
+          </span>
+          <span className="block pb-1">
+            seorang{' '}
+            <span className="mx-2 inline-block align-middle">
+              <Image
+                src="/favicon.png"
+                alt="Logo gwntur.com"
+                width={80}
+                height={80}
+                priority
+                className="inline-block h-14 w-14 rounded-xl object-cover sm:h-16 sm:w-16 lg:h-20 lg:w-20"
+              />
+            </span>{' '}
+            <em style={{ color: 'var(--accent)' }}>Developer</em>
+          </span>
+          <span className="block pb-1">yang</span>
+          <span className="block pb-1">
+            membangun{' '}
+            <span className="mx-2 inline-block align-middle">
+              <Image
+                src="/favicon.png"
+                alt="Logo gwntur.com"
+                width={72}
+                height={72}
+                priority
+                className="inline-block h-12 w-12 rounded-lg object-cover sm:h-14 sm:w-14 lg:h-[72px] lg:w-[72px]"
+              />
+            </span>{' '}
+            <em style={{ color: 'var(--accent)' }}>Tools</em>
+            <span style={{ opacity: 0.6 }}>”</span>
+          </span>
+        </h1>
+      </Reveal>
+
+      <Reveal delay={400}>
+        <div className="mt-16 space-y-6">
+          <p>
+            <span className="font-serif-v italic" style={{ color: 'var(--dim)', fontSize: 'clamp(24px, 3vw, 30px)' }}>
+              {person.location}
+            </span>
+          </p>
+          <p>
+            <a
+              href={`mailto:${person.email}`}
+              className="accent-link font-serif-v italic"
+              style={{ fontSize: 'clamp(24px, 3vw, 30px)' }}
+            >
+              Kirim Email
+            </a>
+          </p>
+          <p>
+            <a
+              href={person.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link font-serif-v italic"
+              style={{ fontSize: 'clamp(24px, 3vw, 30px)' }}
+            >
+              gwntur.com
+            </a>
+          </p>
+        </div>
+      </Reveal>
+      </div>
+    </section>
+  );
+}
