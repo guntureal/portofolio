@@ -1,4 +1,4 @@
-/* Navbar — Vellum Editorial: 44px, krem, border bawah */
+/* Navbar — Vellum Editorial: 44px, putih, border bawah */
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -47,7 +47,7 @@ export default function Navbar() {
             priority
           />
           <span className="font-serif-v text-base" style={{ color: 'var(--ink)' }}>
-            gwntur<span style={{ color: 'var(--gold)' }}>.com</span>
+            gwntur<span style={{ color: 'var(--accent)' }}>.com</span>
           </span>
         </a>
 
