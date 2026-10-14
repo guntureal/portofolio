@@ -1,113 +1,66 @@
-/* Hero — Google/Microsoft style: teks besar kiri, card Material kanan */
+/* Hero — Vellum Editorial: headline serif tengah, foto inline mengambang */
 import Image from 'next/image';
 import { person } from '@/data/portfolio';
 import Reveal from './Reveal';
 
-const STATS = [
-  { label: 'Ngeblog sejak', value: String(person.since) },
-  { label: 'Artikel', value: '11+' },
-  { label: 'Tools', value: '5+' },
-  { label: 'Lokasi', value: person.location },
-];
-
 export default function Hero() {
   return (
-    <section id="atas" className="mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16">
-      <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-        {/* Kolom kiri: teks */}
-        <div>
-          <Reveal>
-            <p className="flex items-center gap-2 text-sm font-medium" style={{ color: 'var(--accent)' }}>
-              <span className="inline-block h-2 w-2 rounded-full" style={{ background: '#34a853' }} aria-hidden />
-              Halo, Saya
-            </p>
-          </Reveal>
-          <Reveal delay={80}>
-            <h1 className="mt-4 text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl">
-              {person.name}
-            </h1>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-4 text-xl font-medium sm:text-2xl" style={{ color: 'var(--accent)' }}>
-              {person.roles.join(' · ')}
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
-              {person.bio}
-            </p>
-          </Reveal>
-          <Reveal delay={320}>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#proyek" className="btn-primary px-7 py-3 text-sm">
-                Lihat Proyek
-              </a>
-              <a
-                href="https://www.gwntur.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline px-7 py-3 text-sm"
-              >
-                Kunjungi Blog
-              </a>
-            </div>
-          </Reveal>
-          <Reveal delay={400}>
-            <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-4 border-t pt-6" style={{ borderColor: 'var(--border)' }}>
-              {STATS.map((s) => (
-                <div key={s.label}>
-                  <dt className="text-xs uppercase tracking-wide" style={{ color: 'var(--muted)' }}>
-                    {s.label}
-                  </dt>
-                  <dd className="mt-1 text-xl font-bold">{s.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
-        </div>
+    <section
+      id="atas"
+      className="mx-auto flex min-h-[calc(100vh-44px)] max-w-6xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6"
+    >
+      <Reveal>
+        <p className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
+          ✦ Portofolio
+        </p>
+      </Reveal>
 
-        {/* Kolom kanan: Material card */}
-        <Reveal delay={200}>
-          <div className="mat-card p-6 sm:p-8">
-            <div className="flex flex-col items-center text-center">
+      <Reveal delay={100}>
+        <h1 className="font-serif-v mt-8 leading-[1.08] tracking-tight" style={{ color: 'var(--ink)', fontSize: 'clamp(48px, 8vw, 96px)' }}>
+          <span className="block">
+            Halo, Saya{' '}
+            <span className="float-photo inline-block align-middle">
               <Image
                 src="/favicon.png"
                 alt="Logo gwntur.com"
-                width={120}
-                height={120}
+                width={96}
+                height={96}
                 priority
-                className="h-28 w-28 rounded-2xl"
+                className="inline-block h-[72px] w-[72px] rounded-2xl sm:h-20 sm:w-20 lg:h-24 lg:w-24"
               />
-              <h2 className="mt-5 text-2xl font-bold">gwntur.com</h2>
-              <p className="mt-1 text-sm" style={{ color: 'var(--muted)' }}>
-                Tutorial &amp; Tools Praktis
-              </p>
-              <div className="mt-6 grid w-full grid-cols-3 gap-3">
-                {[
-                  { v: '11+', l: 'Artikel' },
-                  { v: '5+', l: 'Tools' },
-                  { v: '2018', l: 'Sejak' },
-                ].map((s) => (
-                  <div key={s.l} className="rounded-lg px-2 py-3 section-alt">
-                    <p className="text-lg font-bold">{s.v}</p>
-                    <p className="text-xs" style={{ color: 'var(--muted)' }}>
-                      {s.l}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <a
-                href="https://www.gwntur.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary mt-6 w-full px-5 py-3 text-center text-sm"
-              >
-                Buka gwntur.com
-              </a>
-            </div>
-          </div>
-        </Reveal>
-      </div>
+            </span>
+          </span>
+          <span className="block">
+            <em style={{ color: 'var(--gold)' }}>Guntur</em> Putra Hermanto
+          </span>
+          <span className="block">
+            Web Developer <span style={{ color: 'var(--gold)' }}>·</span> SEO Specialist
+          </span>
+        </h1>
+      </Reveal>
+
+      <Reveal delay={250}>
+        <p
+          className="mt-10 max-w-2xl text-base leading-relaxed sm:text-lg"
+          style={{ color: 'var(--body-2)' }}
+        >
+          {person.bio}
+        </p>
+      </Reveal>
+
+      <Reveal delay={400}>
+        <p className="mt-16 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+          <a href={`mailto:${person.email}`} className="gold-link">
+            {person.email}
+          </a>
+          <span style={{ color: 'var(--dim-2)' }}>·</span>
+          <span style={{ color: 'var(--body-3)' }}>{person.location}</span>
+          <span style={{ color: 'var(--dim-2)' }}>·</span>
+          <a href={person.website} target="_blank" rel="noopener noreferrer" className="gold-link">
+            gwntur.com
+          </a>
+        </p>
+      </Reveal>
     </section>
   );
 }
