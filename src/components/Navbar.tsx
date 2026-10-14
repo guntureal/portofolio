@@ -1,1 +1,185 @@
-LyogTmF2YmFyIOKAlCBWZWxsdW0gRWRpdG9yaWFsOiA0NHB4LCBwdXRpaCwgYm9yZGVyIGJhd2FoICovCid1c2UgY2xpZW50JzsKCmltcG9ydCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCc7CmltcG9ydCBJbWFnZSBmcm9tICduZXh0L2ltYWdlJzsKCi8qIElrb24gU1ZHIHN0cm9rZSB0aXBpcyAoMTZweCkg4oCUIHByb2Zlc2lvbmFsLCB0YW5wYSBlbW9qaS91bmljb2RlICovCmNvbnN0IGljb25Qcm9wcyA9IHsKICB3aWR0aDogMTYsCiAgaGVpZ2h0OiAxNiwKICB2aWV3Qm94OiAnMCAwIDI0IDI0JywKICBmaWxsOiAnbm9uZScsCiAgc3Ryb2tlOiAnY3VycmVudENvbG9yJywKICBzdHJva2VXaWR0aDogMS44LAogIHN0cm9rZUxpbmVjYXA6ICdyb3VuZCcgYXMgY29uc3QsCiAgc3Ryb2tlTGluZWpvaW46ICdyb3VuZCcgYXMgY29uc3QsCiAgJ2FyaWEtaGlkZGVuJzogdHJ1ZSwKfTsKCmNvbnN0IEljb25Vc2VyID0gKCkgPT4gKAogIDxzdmcgey4uLmljb25Qcm9wc30+CiAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjgiIHI9IjQiIC8+CiAgICA8cGF0aCBkPSJNNCAyMWMxLjUtMy41IDQuNS01IDgtNXM2LjUgMS41IDggNSIgLz4KICA8L3N2Zz4KKTsKCmNvbnN0IEljb25Db2RlID0gKCkgPT4gKAogIDxzdmcgey4uLmljb25Qcm9wc30+CiAgICA8cGF0aCBkPSJNOCA2bC01IDYgNSA2IiAvPgogICAgPHBhdGggZD0iTTE2IDZsNSA2LTUgNiIgLz4KICAgIDxwYXRoIGQ9Ik0xMyA0bC0yIDE2IiAvPgogIDwvc3ZnPgopOwoKY29uc3QgSWNvbkZvbGRlciA9ICgpID0+ICgKICA8c3ZnIHsuLi5pY29uUHJvcHN9PgogICAgPHBhdGggZD0iTTMgN2EyIDIgMCAwIDEgMi0yaDRsMiAyaDhhMiAyIDAgMCAxIDIgMnY5YTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yVjd6IiAvPgogIDwvc3ZnPgopOwoKY29uc3QgSWNvblJvdXRlID0gKCkgPT4gKAogIDxzdmcgey4uLmljb25Qcm9wc30+CiAgICA8cGF0aCBkPSJNNCAyMSBDIDkgMjEsIDcgMTQsIDEyIDEzIFMgMTYgMTAsIDE3IDkiIC8+CiAgICA8Y2lyY2xlIGN4PSI0IiBjeT0iMjEiIHI9IjEuOCIgLz4KICAgIDxwYXRoIGQ9Ik0xNSA0LjUgYTMgMyAwIDEgMSA2IDAgYzAgMi4yLTMgNC41LTMgNC41IFMxNSA2LjcgMTUgNC41IHoiIC8+CiAgICA8Y2lyY2xlIGN4PSIxOCIgY3k9IjQuNSIgcj0iMSIgLz4KICA8L3N2Zz4KKTsKCmNvbnN0IEljb25NYWlsID0gKCkgPT4gKAogIDxzdmcgey4uLmljb25Qcm9wc30+CiAgICA8cmVjdCB4PSIzIiB5PSI1IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIyIiAvPgogICAgPHBhdGggZD0iTTMgN2w5IDYgOS02IiAvPgogIDwvc3ZnPgopOwoKY29uc3QgSWNvblN1biA9ICgpID0+ICgKICA8c3ZnIHsuLi5pY29uUHJvcHN9PgogICAgPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNCIgLz4KICAgIDxwYXRoIGQ9Ik0xMiAydjIiIC8+CiAgICA8cGF0aCBkPSJNMTIgMjB2MiIgLz4KICAgIDxwYXRoIGQ9Ik00LjkgNC45bDEuNCAxLjQiIC8+CiAgICA8cGF0aCBkPSJNMTcuNyAxNy43bDEuNCAxLjQiIC8+CiAgICA8cGF0aCBkPSJNMiAxMmgyIiAvPgogICAgPHBhdGggZD0iTTIwIDEyaDIiIC8+CiAgICA8cGF0aCBkPSJNNC45IDE5LjFsMS40LTEuNCIgLz4KICAgIDxwYXRoIGQ9Ik0xNy43IDYuM2wxLjQtMS40IiAvPgogIDwvc3ZnPgopOwoKY29uc3QgSWNvbk1vb24gPSAoKSA9PiAoCiAgPHN2ZyB7Li4uaWNvblByb3BzfT4KICAgIDxwYXRoIGQ9Ik0yMSAxMi44QTkgOSAwIDEgMSAxMS4yIDNhNyA3IDAgMCAwIDkuOCA5Ljh6IiAvPgogIDwvc3ZnPgopOwoKY29uc3QgbGlua3MgPSBbCiAgeyBsYWJlbDogJ1RlbnRhbmcnLCBocmVmOiAnI3RlbnRhbmcnLCBJY29uOiBJY29uVXNlciB9LAogIHsgbGFiZWw6ICdLZWFobGlhbicsIGhyZWY6ICcja2VhaGxpYW4nLCBJY29uOiBJY29uQ29kZSB9LAogIHsgbGFiZWw6ICdQcm95ZWsnLCBocmVmOiAnI3Byb3llaycsIEljb246IEljb25Gb2xkZXIgfSwKICB7IGxhYmVsOiAnUGVyamFsYW5hbicsIGhyZWY6ICcjcGVyamFsYW5hbicsIEljb246IEljb25Sb3V0ZSB9LAogIHsgbGFiZWw6ICdLb250YWsnLCBocmVmOiAnI2tvbnRhaycsIEljb246IEljb25NYWlsIH0sCl07CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBOYXZiYXIoKSB7CiAgY29uc3QgW2RhcmssIHNldERhcmtdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtvcGVuLCBzZXRPcGVuXSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIHNldERhcmsoZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50LmNsYXNzTGlzdC5jb250YWlucygnZGFyaycpKTsKICB9LCBbXSk7CgogIGNvbnN0IHRvZ2dsZVRoZW1lID0gKCkgPT4gewogICAgY29uc3QgbmV4dCA9ICFkYXJrOwogICAgc2V0RGFyayhuZXh0KTsKICAgIGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5jbGFzc0xpc3QudG9nZ2xlKCdkYXJrJywgbmV4dCk7CiAgICB0cnkgewogICAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbSgnZ3ctdGhlbWUnLCBuZXh0ID8gJ2RhcmsnIDogJ2xpZ2h0Jyk7CiAgICB9IGNhdGNoIHsKICAgICAgLyogaWdub3JlICovCiAgICB9CiAgfTsKCiAgcmV0dXJuICgKICAgIDxoZWFkZXIKICAgICAgY2xhc3NOYW1lPSJzdGlja3kgdG9wLTAgei01MCIKICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZDogJ3ZhcigtLWJnKScsIGJvcmRlckJvdHRvbTogJzFweCBzb2xpZCB2YXIoLS1saW5lKScgfX0KICAgID4KICAgICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gZmxleCBoLTExIG1heC13LTZ4bCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIGdhcC00IHB4LTQgc206cHgtNiI+CiAgICAgICAgPGEgaHJlZj0iI2F0YXMiIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIuNSIgYXJpYS1sYWJlbD0iQmVyYW5kYSI+CiAgICAgICAgICA8SW1hZ2UKICAgICAgICAgICAgc3JjPSIvZmF2aWNvbi5wbmciCiAgICAgICAgICAgIGFsdD0iTG9nbyBnd250dXIuY29tIgogICAgICAgICAgICB3aWR0aD17Mjh9CiAgICAgICAgICAgIGhlaWdodD17Mjh9CiAgICAgICAgICAgIGNsYXNzTmFtZT0iaC03IHctNyByb3VuZGVkLW1kIgogICAgICAgICAgICBwcmlvcml0eQogICAgICAgICAgLz4KICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0iZm9udC1zZXJpZi12IHRleHQtYmFzZSIgc3R5bGU9e3sgY29sb3I6ICd2YXIoLS1pbmspJyB9fT4KICAgICAgICAgICAgZ3dudHVyPHNwYW4gc3R5bGU9e3sgY29sb3I6ICd2YXIoLS1hY2NlbnQpJyB9fT4uY29tPC9zcGFuPgogICAgICAgICAgPC9zcGFuPgogICAgICAgIDwvYT4KCiAgICAgICAgPG5hdiBjbGFzc05hbWU9ImhpZGRlbiBpdGVtcy1jZW50ZXIgZ2FwLTcgbWQ6ZmxleCIgYXJpYS1sYWJlbD0iTmF2aWdhc2kgdXRhbWEiPgogICAgICAgICAge2xpbmtzLm1hcCgoeyBsYWJlbCwgaHJlZiwgSWNvbiB9KSA9PiAoCiAgICAgICAgICAgIDxhIGtleT17aHJlZn0gaHJlZj17aHJlZn0gY2xhc3NOYW1lPSJuYXYtbGluayBmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMS41IHRleHQtc20iPgogICAgICAgICAgICAgIDxJY29uIC8+CiAgICAgICAgICAgICAge2xhYmVsfQogICAgICAgICAgICA8L2E+CiAgICAgICAgICApKX0KICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgdHlwZT0iYnV0dG9uIgogICAgICAgICAgICBvbkNsaWNrPXt0b2dnbGVUaGVtZX0KICAgICAgICAgICAgY2xhc3NOYW1lPSJ0aGVtZS10b2dnbGUiCiAgICAgICAgICAgIGFyaWEtbGFiZWw9e2RhcmsgPyAnVWJhaCBrZSBtb2RlIHRlcmFuZycgOiAnVWJhaCBrZSBtb2RlIGdlbGFwJ30KICAgICAgICAgICAgdGl0bGU9e2RhcmsgPyAnTW9kZSB0ZXJhbmcnIDogJ01vZGUgZ2VsYXAnfQogICAgICAgICAgPgogICAgICAgICAgICB7ZGFyayA/IDxJY29uU3VuIC8+IDogPEljb25Nb29uIC8+fQogICAgICAgICAgPC9idXR0b24+CiAgICAgICAgPC9uYXY+CgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyBtZDpoaWRkZW4iPgogICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICB0eXBlPSJidXR0b24iCiAgICAgICAgICAgIG9uQ2xpY2s9e3RvZ2dsZVRoZW1lfQogICAgICAgICAgICBjbGFzc05hbWU9InRoZW1lLXRvZ2dsZSIKICAgICAgICAgICAgYXJpYS1sYWJlbD17ZGFyayA/ICdVYmFoIGtlIG1vZGUgdGVyYW5nJyA6ICdVYmFoIGtlIG1vZGUgZ2VsYXAnfQogICAgICAgICAgICB0aXRsZT17ZGFyayA/ICdNb2RlIHRlcmFuZycgOiAnTW9kZSBnZWxhcCd9CiAgICAgICAgICA+CiAgICAgICAgICAgIHtkYXJrID8gPEljb25TdW4gLz4gOiA8SWNvbk1vb24gLz59CiAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgdHlwZT0iYnV0dG9uIgogICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRPcGVuKCh2KSA9PiAhdil9CiAgICAgICAgICAgIGNsYXNzTmFtZT0ibmF2LWxpbmsgdGV4dC1zbSIKICAgICAgICAgICAgYXJpYS1leHBhbmRlZD17b3Blbn0KICAgICAgICAgICAgYXJpYS1sYWJlbD0iQnVrYSBtZW51IgogICAgICAgICAgPgogICAgICAgICAgICBNZW51CiAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CgogICAgICB7b3BlbiAmJiAoCiAgICAgICAgPG5hdgogICAgICAgICAgY2xhc3NOYW1lPSJib3JkZXItdCBweC00IHB5LTMgbWQ6aGlkZGVuIgogICAgICAgICAgc3R5bGU9e3sgYm9yZGVyQ29sb3I6ICd2YXIoLS1saW5lKScsIGJhY2tncm91bmQ6ICd2YXIoLS1iZyknIH19CiAgICAgICAgICBhcmlhLWxhYmVsPSJOYXZpZ2FzaSBzZWx1bGVyIgogICAgICAgID4KICAgICAgICAgIHtsaW5rcy5tYXAoKHsgbGFiZWwsIGhyZWYsIEljb24gfSkgPT4gKAogICAgICAgICAgICA8YQogICAgICAgICAgICAgIGtleT17aHJlZn0KICAgICAgICAgICAgICBocmVmPXtocmVmfQogICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldE9wZW4oZmFsc2UpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0ibmF2LWxpbmsgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEuNSBweS0yLjUgdGV4dC1zbSIKICAgICAgICAgICAgPgogICAgICAgICAgICAgIDxJY29uIC8+CiAgICAgICAgICAgICAge2xhYmVsfQogICAgICAgICAgICA8L2E+CiAgICAgICAgICApKX0KICAgICAgICA8L25hdj4KICAgICAgKX0KICAgIDwvaGVhZGVyPgogICk7Cn0K
+/* Navbar — Vellum Editorial: 44px, putih, border bawah */
+'use client';
+
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+
+/* Ikon SVG stroke tipis (16px) — profesional, tanpa emoji/unicode */
+const iconProps = {
+  width: 16,
+  height: 16,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 1.8,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+  'aria-hidden': true,
+};
+
+const IconUser = () => (
+  <svg {...iconProps}>
+    <circle cx="12" cy="8" r="4" />
+    <path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" />
+  </svg>
+);
+
+const IconCode = () => (
+  <svg {...iconProps}>
+    <path d="M8 6l-5 6 5 6" />
+    <path d="M16 6l5 6-5 6" />
+    <path d="M13 4l-2 16" />
+  </svg>
+);
+
+const IconFolder = () => (
+  <svg {...iconProps}>
+    <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
+  </svg>
+);
+
+const IconRoute = () => (
+  <svg {...iconProps}>
+    <path d="M4 21 C 9 21, 7 14, 12 13 S 16 10, 17 9" />
+    <circle cx="4" cy="21" r="1.8" />
+    <path d="M15 4.5 a3 3 0 1 1 6 0 c0 2.2-3 4.5-3 4.5 S15 6.7 15 4.5 z" />
+    <circle cx="18" cy="4.5" r="1" />
+  </svg>
+);
+
+const IconMail = () => (
+  <svg {...iconProps}>
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="M3 7l9 6 9-6" />
+  </svg>
+);
+
+const IconSun = () => (
+  <svg {...iconProps}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2" />
+    <path d="M12 20v2" />
+    <path d="M4.9 4.9l1.4 1.4" />
+    <path d="M17.7 17.7l1.4 1.4" />
+    <path d="M2 12h2" />
+    <path d="M20 12h2" />
+    <path d="M4.9 19.1l1.4-1.4" />
+    <path d="M17.7 6.3l1.4-1.4" />
+  </svg>
+);
+
+const IconMoon = () => (
+  <svg {...iconProps}>
+    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+  </svg>
+);
+
+const links = [
+  { label: 'Tentang', href: '#tentang', Icon: IconUser },
+  { label: 'Keahlian', href: '#keahlian', Icon: IconCode },
+  { label: 'Proyek', href: '#proyek', Icon: IconFolder },
+  { label: 'Perjalanan', href: '#perjalanan', Icon: IconRoute },
+  { label: 'Kontak', href: '#kontak', Icon: IconMail },
+];
+
+export default function Navbar() {
+  const [dark, setDark] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setDark(document.documentElement.classList.contains('dark'));
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.classList.toggle('dark', next);
+    try {
+      localStorage.setItem('gw-theme', next ? 'dark' : 'light');
+    } catch {
+      /* ignore */
+    }
+  };
+
+  return (
+    <header
+      className="sticky top-0 z-50"
+      style={{ background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}
+    >
+      <div className="mx-auto flex h-11 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+        <a href="#atas" className="flex items-center gap-2.5" aria-label="Beranda">
+          <Image
+            src="/favicon.png"
+            alt="Logo gwntur.com"
+            width={28}
+            height={28}
+            className="h-7 w-7 rounded-md"
+            priority
+          />
+          <span className="font-serif-v text-base" style={{ color: 'var(--ink)' }}>
+            gwntur<span style={{ color: 'var(--accent)' }}>.com</span>
+          </span>
+        </a>
+
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Navigasi utama">
+          {links.map(({ label, href, Icon }) => (
+            <a key={href} href={href} className="nav-link flex items-center gap-1.5 text-sm">
+              <Icon />
+              {label}
+            </a>
+          ))}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label={dark ? 'Ubah ke mode terang' : 'Ubah ke mode gelap'}
+            title={dark ? 'Mode terang' : 'Mode gelap'}
+          >
+            {dark ? <IconSun /> : <IconMoon />}
+          </button>
+        </nav>
+
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label={dark ? 'Ubah ke mode terang' : 'Ubah ke mode gelap'}
+            title={dark ? 'Mode terang' : 'Mode gelap'}
+          >
+            {dark ? <IconSun /> : <IconMoon />}
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="nav-link text-sm"
+            aria-expanded={open}
+            aria-label="Buka menu"
+          >
+            Menu
+          </button>
+        </div>
+      </div>
+
+      {open && (
+        <nav
+          className="border-t px-4 py-3 md:hidden"
+          style={{ borderColor: 'var(--line)', background: 'var(--bg)' }}
+          aria-label="Navigasi seluler"
+        >
+          {links.map(({ label, href, Icon }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="nav-link flex items-center gap-1.5 py-2.5 text-sm"
+            >
+              <Icon />
+              {label}
+            </a>
+          ))}
+        </nav>
+      )}
+    </header>
+  );
+}
