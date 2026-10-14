@@ -116,7 +116,7 @@ export const socials: Social[] = [
   { label: 'Instagram', href: 'https://www.instagram.com/gwntur', handle: '@gwntur' },
   { label: 'GitHub', href: 'https://github.com/guntureal', handle: 'guntureal' },
   { label: 'Telegram', href: 'https://t.me/gwntur', handle: 'gwntur' },
-  { label: 'Email', href: 'mailto:gwntur@gmail.com', handle: 'gwntur@gmail.com' },
+  { label: 'Email', href: 'mailto:mail@gwntur.com', handle: 'mail@gwntur.com' },
 ];
 
 export const person = {
@@ -125,7 +125,7 @@ export const person = {
   roles: ['Web Developer', 'SEO Specialist', 'Content Strategist', 'UI/UX Designer'],
   bio: 'gwntur.com berawal dari kebiasaan ngeblog saya sejak 2018. Dari sekadar menulis, berkembang menjadi membangun tools web praktis — downloader, AI chat, hingga pembuat stiker — yang dipakai ribuan orang setiap hari.',
   location: 'Indonesia',
-  email: 'gwntur@gmail.com',
+  email: 'mail@gwntur.com',
   website: 'https://www.gwntur.com/',
   since: 2018,
 };
