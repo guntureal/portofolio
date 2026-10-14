@@ -6,15 +6,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#1a73e8',
-        primaryDark: '#1765cc',
-        primaryLight: '#e8f0fe',
-        googleRed: '#ea4335',
-        googleYellow: '#fbbc04',
-        googleGreen: '#34a853',
+        vellum: {
+          bg: '#F5F2EF',
+          ink: '#2A2622',
+          body: '#544D45',
+          dim: '#8C8073',
+          gold: '#D9A326',
+          line: '#E5E0DC',
+        },
       },
       fontFamily: {
-        sans: ['Google Sans', 'Segoe UI', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Rubik', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
       },
     },
   },
