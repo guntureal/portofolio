@@ -1,1 +1,47 @@
-IyBQb3J0b2ZvbGlvIOKAlCBHdW50dXIgUHV0cmEgSGVybWFudG8KCl9lYnNpdGUgcG9ydG9mb2xpbyBtb2Rlcm4gZGliYW5ndW4gZGVuZ2FuICoqTmV4dC5qcyAxNCArIFR5cGVTY3JpcHQgKyBUYWlsd2luZCBDU1MqKiAoQXBwIFJvdXRlcikuCgojIyBGaXR1cgoKLSBIZXJvIGRlbmdhbiBhbmltYXNpIGtldGlrIHBlcmFuIChXZWIgRGV2ZWxvcGVyIC8gU0VPICBTcGVjaWFsaXN0IC8gQ29udGVudCBTdHJhdGVnaXN0IC8gVUkvVVggRGVzaWduZXIpCi0gVGVudGFuZyArIHRpbWVsaW5lIHBlcmp1bGFuYW4gKDIwMTgg4oaSIDIwMjYpCi0gS2VhaGxpYW4gZGVuZ2FuIGJhciBhbmltYXNpICsgZmlsdGVyIGthdGVnb3JpCi0gUHJveWVrIGZpbHRlcmFibGUgKFJlbXVhIC8gQUkgLyBEb3dubG9hZGVyIC8gVXRpbGl0YXMgLyBLb250ZW4pCi0gS29udGFrICsgdGF1dGFuIHNvc2lhbCAoRmFjZWJvb2ssIEluc3RhZ3JhbSwgR2l0SHViLCBUZWxlZ3JhbSwgRW1haWwpCi0gTW9kZSBnZWxhcC90ZXJhbmcgKHNpbmtyb24gcHJlZmVyZW5zaSBzaXN0ZW0sIHRlcnNpbXBhbiBkaSBsb2NhbFN0b3JhZ2UpCi0gQW5pbWFzaSBzY3JvbGwgdmlhIEludGVyc2VjdGlvbiBPYnNlcnZlciAodGFucGEgbGlicmFyeSBiZXJhdCkKLSBTRU86IG1ldGFkYXRhLCBPcGVuIEdyYXBoLCBKU09OLUxEUGVyc29uIHNjaGVtYQotIFJlc3BvbnNpZiBtb2JpbGUtZmlyc3Q7IHRhbnBhIGJhY2tncm91bmQgY2FyZCB1bnR1ayBzZWN0aW9uIG5vbi1pbnRlcmFrdGlmIChoYW55YSBib3JkZXIgdGlwaXMpLCBzZXN1YWkgcHJlZmVyZW5zaSBwZW1pbGlrCi0gV2FybmEgdXRhbWEgYCMwMDY2Y2MKCiMjIE1lbmphbGFrYW4gbG9rYWwKCltqYmFzaFxubm9tIGluc3RhbGxcbnBtcSBydW4gZGV2XG5gYFxgCg0KUnVrYSBodHRwOi8vbG9jYWxob3N0OjMwMDAKCiMjIEJ1aWxkIHN0YXRpcwoKW2BgYmFzaFxubm9tIHJ1biBidWlsZF5uYFxgCg0KT3V0cHV0IGRpIGBvdXQvYCAoc3RhdGljIGV4cG9ydCwgc2lhcCBkZXBsb3kga2UgQ2xvdWRmbGFyZSBQYWdlcyAvIEdpdEh1YiBQYWdlcyAvIFZlcmNlbCkuCgojIyBTdHJ1a3R1cgoKW2BgXc2NyL1xuICBhcHAvICAgICAgICAgICBsYXlvdXQudHN4LCBwYWdlLnRzeCwgZ2xvYmFscy5jc3MKICBjb21wb25lbnRzLyAgICAgTmF2YmFyLCBIZXJvLCBBYm91dCwgU2tpbGxzLCBQcm9qZWN0cywgQ29udGFjdCwgRm9vdGVyLCBUaGVtZVNjcmlwdAogIGRhdGEvICAgICAgICAgICBwb3J0Zm9saW8udHMgKHByb3llaywgc2tpbGwsIHNvc2lhbCwgdGltZWxpbmUpCltgYGBgCgojIyBDYXRhdGFuCgotIFRhdXRhbiBwcm95ZWsgbWVuZ2FyYWgga2UgZ3dudHVyLmNvbSAoaGFsYW1hbiBsaXZlIHRvb2xzKS4gR2FudGkgYHVybCBkaSBgc3JjL2RhdGEvcG9ydGZvbGlvLnRzIGJpbGEgVVJMIGhhbGFtYW4gdG9vbCBiZXJ1YmFoLgotIEF2YXRhciBoZXJvIHNhYXQgaW5pIHBsYWNlaG9sZGVyIGh1cnVmIFwiR1wiLiBHYW50aSBkZW5nYW4gZm90byBwcm9maWwgZGkgYHN0Yy9jb21wb25lbnRzL0hlcm8udHN4YC4KCiAgPCEtLSBEZXBsb3kgdHJpZ2dlcjogMjAyNi0xMC0xNCAtLT4K
+# Portofolio — Guntur Putra Hermanto
+
+Website portofolio modern dibangun dengan **Next.js 14 + TypeScript + Tailwind CSS** (App Router).
+
+## Fitur
+
+- Hero dengan animasi ketik peran (Web Developer / SEO Specialist / Content Strategist / UI/UX Designer)
+- Tentang + timeline perjalanan (2018 → 2026)
+- Keahlian dengan bar animasi + filter kategori
+- Proyek filterable (Semua / AI / Downloader / Utilitas / Konten)
+- Kontak + tautan sosial (Facebook, Instagram, GitHub, Telegram, Email)
+- Mode gelap/terang (sinkron preferensi sistem, tersimpan di localStorage)
+- Animasi scroll via Intersection Observer (tanpa library berat)
+- SEO: metadata, Open Graph, JSON-LD Person schema
+- Responsif mobile-first; tanpa background card untuk section non-interaktif (hanya border tipis), sesuai preferensi pemilik
+- Warna utama `#0066cc`
+
+## Menjalankan lokal
+
+```bash
+npm install
+npm run dev
+```
+
+Buka http://localhost:3000
+
+## Build statis
+
+```bash
+npm run build
+```
+
+Output di `out/` (static export, siap deploy ke Cloudflare Pages / GitHub Pages / Vercel).
+
+## Struktur
+
+```
+src/
+  app/            layout.tsx, page.tsx, globals.css
+  components/     Navbar, Hero, About, Skills, Projects, Contact, Footer, ThemeScript
+  data/           portfolio.ts (proyek, skill, sosial, timeline)
+```
+
+## Catatan
+
+- Tautan proyek mengarah ke gwntur.com (halaman live tools). Ganti `url` di `src/data/portfolio.ts` bila URL halaman tool berubah.
+- Avatar hero saat ini placeholder huruf "G". Ganti dengan foto profil di `src/components/Hero.tsx`.
