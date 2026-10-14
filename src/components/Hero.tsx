@@ -1,4 +1,4 @@
-/* Hero — Vellum Editorial: struktur persis template (kutip, headline 4 baris, 3 foto inline, kontak vertikal) */
+/* Hero — Vellum Editorial: kutip, headline 4 baris, 3 foto inline, kontak vertikal */
 import Image from 'next/image';
 import { person } from '@/data/portfolio';
 import Reveal from './Reveal';
@@ -13,7 +13,7 @@ export default function Hero() {
       <Reveal delay={100}>
         <h1 className="font-serif-v leading-[1.25] tracking-tight" style={{ color: 'var(--ink)', fontSize: 'clamp(44px, 7.5vw, 88px)' }}>
           <span className="block pb-1">
-            <span style={{ opacity: 0.6 }}>“</span> Guntur Putra{' '}
+            <span style={{ opacity: 0.6 }}>“</span> Halo, saya{' '}
             <span className="mx-2 inline-block align-middle">
               <Image
                 src="/profile.webp"
@@ -24,36 +24,36 @@ export default function Hero() {
                 className="inline-block h-16 w-16 rounded-2xl object-cover sm:h-20 sm:w-20 lg:h-24 lg:w-24"
               />
             </span>{' '}
-            <em style={{ color: 'var(--accent)' }}>Hermanto</em>
+            <em style={{ color: 'var(--accent)' }}>Guntur.</em>
           </span>
           <span className="block pb-1">
-            Web Developer{' '}
+            <em style={{ color: 'var(--accent)' }}>Selamat</em>{' '}
             <span className="mx-2 inline-block align-middle">
               <Image
-                src="/favicon.png"
-                alt="Logo gwntur.com"
+                src="/hero-ai-chat.webp"
+                alt="Asisten AI gwntur.com"
                 width={80}
                 height={80}
                 priority
                 className="inline-block h-14 w-14 rounded-xl object-cover sm:h-16 sm:w-16 lg:h-20 lg:w-20"
               />
             </span>{' '}
-            <em style={{ color: 'var(--accent)' }}>&amp; SEO Specialist</em>
+            <em style={{ color: 'var(--accent)' }}>datang</em>
           </span>
-          <span className="block pb-1">yang</span>
+          <span className="block pb-1">di</span>
           <span className="block pb-1">
-            Membangun{' '}
+            <em style={{ color: 'var(--accent)' }}>Portofolio</em>{' '}
             <span className="mx-2 inline-block align-middle">
               <Image
-                src="/favicon.png"
-                alt="Logo gwntur.com"
+                src="/hero-stiker.webp"
+                alt="Stiker WhatsApp gwntur.com"
                 width={72}
                 height={72}
                 priority
                 className="inline-block h-12 w-12 rounded-lg object-cover sm:h-14 sm:w-14 lg:h-[72px] lg:w-[72px]"
               />
             </span>{' '}
-            <em style={{ color: 'var(--accent)' }}>Tools Web</em>
+            saya.
             <span style={{ opacity: 0.6 }}>”</span>
           </span>
         </h1>
