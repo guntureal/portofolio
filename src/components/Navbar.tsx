@@ -4,12 +4,85 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
+/* Ikon SVG stroke tipis (16px) — profesional, tanpa emoji/unicode */
+const iconProps = {
+  width: 16,
+  height: 16,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 1.8,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+  'aria-hidden': true,
+};
+
+const IconUser = () => (
+  <svg {...iconProps}>
+    <circle cx="12" cy="8" r="4" />
+    <path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" />
+  </svg>
+);
+
+const IconCode = () => (
+  <svg {...iconProps}>
+    <path d="M8 6l-5 6 5 6" />
+    <path d="M16 6l5 6-5 6" />
+    <path d="M13 4l-2 16" />
+  </svg>
+);
+
+const IconFolder = () => (
+  <svg {...iconProps}>
+    <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
+  </svg>
+);
+
+const IconTimeline = () => (
+  <svg {...iconProps}>
+    <path d="M3 12h18" />
+    <circle cx="6" cy="12" r="2" />
+    <circle cx="12" cy="12" r="2" />
+    <circle cx="18" cy="12" r="2" />
+    <path d="M6 10V6" />
+    <path d="M12 18v-4" />
+    <path d="M18 10V6" />
+  </svg>
+);
+
+const IconMail = () => (
+  <svg {...iconProps}>
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="M3 7l9 6 9-6" />
+  </svg>
+);
+
+const IconSun = () => (
+  <svg {...iconProps}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2" />
+    <path d="M12 20v2" />
+    <path d="M4.9 4.9l1.4 1.4" />
+    <path d="M17.7 17.7l1.4 1.4" />
+    <path d="M2 12h2" />
+    <path d="M20 12h2" />
+    <path d="M4.9 19.1l1.4-1.4" />
+    <path d="M17.7 6.3l1.4-1.4" />
+  </svg>
+);
+
+const IconMoon = () => (
+  <svg {...iconProps}>
+    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+  </svg>
+);
+
 const links = [
-  { label: 'Tentang', href: '#tentang' },
-  { label: 'Keahlian', href: '#keahlian' },
-  { label: 'Proyek', href: '#proyek' },
-  { label: 'Perjalanan', href: '#perjalanan' },
-  { label: 'Kontak', href: '#kontak' },
+  { label: 'Tentang', href: '#tentang', Icon: IconUser },
+  { label: 'Keahlian', href: '#keahlian', Icon: IconCode },
+  { label: 'Proyek', href: '#proyek', Icon: IconFolder },
+  { label: 'Perjalanan', href: '#perjalanan', Icon: IconTimeline },
+  { label: 'Kontak', href: '#kontak', Icon: IconMail },
 ];
 
 export default function Navbar() {
@@ -52,18 +125,20 @@ export default function Navbar() {
         </a>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Navigasi utama">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="nav-link text-sm">
-              {l.label}
+          {links.map(({ label, href, Icon }) => (
+            <a key={href} href={href} className="nav-link flex items-center gap-1.5 text-sm">
+              <Icon />
+              {label}
             </a>
           ))}
           <button
             type="button"
             onClick={toggleTheme}
-            className="nav-link text-sm"
+            className="theme-toggle"
             aria-label={dark ? 'Ubah ke mode terang' : 'Ubah ke mode gelap'}
+            title={dark ? 'Mode terang' : 'Mode gelap'}
           >
-            {dark ? 'Terang' : 'Gelap'}
+            {dark ? <IconSun /> : <IconMoon />}
           </button>
         </nav>
 
@@ -71,10 +146,11 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="nav-link text-sm"
+            className="theme-toggle"
             aria-label={dark ? 'Ubah ke mode terang' : 'Ubah ke mode gelap'}
+            title={dark ? 'Mode terang' : 'Mode gelap'}
           >
-            {dark ? 'Terang' : 'Gelap'}
+            {dark ? <IconSun /> : <IconMoon />}
           </button>
           <button
             type="button"
@@ -94,14 +170,15 @@ export default function Navbar() {
           style={{ borderColor: 'var(--line)', background: 'var(--bg)' }}
           aria-label="Navigasi seluler"
         >
-          {links.map((l) => (
+          {links.map(({ label, href, Icon }) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={href}
+              href={href}
               onClick={() => setOpen(false)}
-              className="nav-link block py-2.5 text-sm"
+              className="nav-link flex items-center gap-1.5 py-2.5 text-sm"
             >
-              {l.label}
+              <Icon />
+              {label}
             </a>
           ))}
         </nav>
