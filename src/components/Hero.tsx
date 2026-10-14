@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="atas"
-      className="mx-auto flex min-h-[calc(100vh-44px)] max-w-6xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6"
+      className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 md:py-28"
     >
       <Reveal>
         <p className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
