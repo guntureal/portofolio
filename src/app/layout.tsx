@@ -7,7 +7,7 @@ import ThemeScript from '@/components/ThemeScript';
 import { person } from '@/data/portfolio';
 
 export const metadata: Metadata = {
-  title: 'Guntur Putra Hermanto — Web Developer & SEO Specialist | gwntur.com',
+  title: 'Portofolio | Guntur',
   description:
     'Portofolio Guntur Putra Hermanto: Web Developer, SEO Specialist, Content Strategist, UI/UX Designer. Pembangun tools web gwntur.com — AI chat, downloader, dan utilitas gratis.',
   keywords: ['Guntur Putra Hermanto', 'gwntur', 'Web Developer Indonesia', 'SEO Specialist', 'Portofolio'],
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://portofolio.gwntur.com/',
-    title: 'Guntur Putra Hermanto — Web Developer & SEO Specialist',
+    title: 'Portofolio | Guntur',
     description: 'Membangun tools web praktis dan konten SEO: AI chat, downloader, stiker WhatsApp.',
     siteName: 'gwntur.com',
     images: [{ url: '/favicon.png', width: 512, height: 512, alt: 'Logo gwntur.com' }],
