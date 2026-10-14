@@ -1,0 +1,164 @@
+/* Portofolio Guntur — Google x Microsoft Corporate */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bodyB: #ffffff;
+  --surface: #f8f9fa;
+  --surface-2: #f1f3f4;
+  --textC: #202124;
+  --muted: #5f6368;
+  --border: #dadce0;
+  --card-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  --card-shadow-hover: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+  --accent: #1a73e8;
+  --accent-hover: #1765cc;
+}
+
+.dark {
+  --bodyB: #1f1f1f;
+  --surface: #2b2b2b;
+  --surface-2: #333333;
+  --textC: #e8eaed;
+  --muted: #9aa0a6;
+  --border: #3c4043;
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 1px 3px rgba(0, 0, 0, 0.5), 0 4px 8px 3px rgba(0, 0, 0, 0.35);
+  --accent: #8ab4f8;
+  --accent-hover: #aecbfa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bodyB);
+  color: var(--textC);
+  font-family: 'Google Sans', 'Segoe UI', Inter, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #1a73e8;
+  color: #fff;
+}
+
+/* ============ Material-style card ============ */
+.mat-card {
+  background: var(--bodyB);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.mat-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ============ Buttons ============ */
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.btn-outline:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+}
+
+/* ============ Section alternate background ============ */
+.section-alt {
+  background: var(--surface);
+}
+
+/* ============ Reveal: fade-in only ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============ Skill bar ============ */
+.skill-bar-fill {
+  background: var(--accent);
+  border-radius: 9999px;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============ Filter chip ============ */
+.filter-chip {
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.filter-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.filter-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ============ Tag chip ============ */
+.tag-chip {
+  background: var(--surface-2);
+  color: var(--muted);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ============ Nav link ============ */
+.nav-link {
+  color: var(--muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .mat-card,
+  .btn-primary,
+  .btn-outline,
+  .skill-bar-fill,
+  .filter-chip {
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
