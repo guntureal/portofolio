@@ -31,7 +31,6 @@ const jsonLd = {
   name: person.name,
   jobTitle: 'Web Developer & SEO Specialist',
   url: person.website,
-  email: person.email,
   sameAs: [
     'https://www.facebook.com/gwntur',
     'https://www.instagram.com/gwntur',
