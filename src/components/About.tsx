@@ -1,13 +1,12 @@
-/* About — Modern Portfolio: foto + bio + stats + Download CV */
+/* About — Modern Portfolio: foto + bio + stats */
 import Image from 'next/image';
 import { person } from '@/data/portfolio';
-import { IconDownload } from './icons';
 import Reveal from './Reveal';
 
 const stats = [
   { value: '8+', label: 'Years Experience' },
   { value: '6+', label: 'Completed Projects' },
-  { value: '24/7', label: 'Online Support' },
+  { value: '100%', label: 'Tools Gratis' },
 ];
 
 export default function About() {
@@ -37,7 +36,7 @@ export default function About() {
                 className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold"
                 style={{ background: 'var(--accent)', color: '#fff', boxShadow: 'var(--shadow-lg)' }}
               >
-                Since 2018 — gwntur.com
+                Guntur Putra Hermanto
               </div>
             </div>
           </Reveal>
@@ -64,11 +63,6 @@ export default function About() {
                   </div>
                 ))}
               </div>
-
-              <a href={`mailto:${person.email}`} className="btn-primary mt-8">
-                Download CV
-                <IconDownload size={17} />
-              </a>
             </div>
           </Reveal>
         </div>
