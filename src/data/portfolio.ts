@@ -7,8 +7,6 @@ export interface Project {
   category: ProjectCategory;
   tags: string[];
   url: string;
-  featured?: boolean;
-  stats?: { label: string; value: string }[];
 }
 
 export const projects: Project[] = [
@@ -20,11 +18,6 @@ export const projects: Project[] = [
     category: 'AI',
     tags: ['Gemini', 'Next.js', 'Cloudflare Workers', 'TTS'],
     url: 'https://www.gwntur.com/',
-    featured: true,
-    stats: [
-      { label: 'Input', value: 'Teks · Suara · File' },
-      { label: 'Model', value: 'Gemini' },
-    ],
   },
   {
     id: 'tiktok-downloader',
@@ -34,8 +27,6 @@ export const projects: Project[] = [
     category: 'Downloader',
     tags: ['Video', 'Tanpa Watermark', 'Cache'],
     url: 'https://www.gwntur.com/',
-    featured: true,
-    stats: [{ label: 'Format', value: 'MP4 · Foto' }],
   },
   {
     id: 'facebook-downloader',
@@ -45,7 +36,6 @@ export const projects: Project[] = [
     category: 'Downloader',
     tags: ['Video', 'Reels', 'HD'],
     url: 'https://www.gwntur.com/',
-    stats: [{ label: 'Format', value: 'MP4 HD' }],
   },
   {
     id: 'instagram-downloader',
@@ -55,7 +45,6 @@ export const projects: Project[] = [
     category: 'Downloader',
     tags: ['Video', 'Reels', 'Foto HD'],
     url: 'https://www.gwntur.com/',
-    stats: [{ label: 'Format', value: 'MP4 · Foto' }],
   },
   {
     id: 'stiker-whatsapp',
@@ -65,7 +54,6 @@ export const projects: Project[] = [
     category: 'Utilitas',
     tags: ['WebP', 'Editor', 'Mobile'],
     url: 'https://www.gwntur.com/',
-    stats: [{ label: 'Output', value: 'Stiker WebP' }],
   },
   {
     id: 'blog',
@@ -75,34 +63,73 @@ export const projects: Project[] = [
     category: 'Konten',
     tags: ['SEO', 'Tutorial', 'Artikel'],
     url: 'https://www.gwntur.com/',
-    featured: true,
-    stats: [{ label: 'Artikel', value: '11+' }],
   },
 ];
 
-export const projectFilters: ('Semua' | ProjectCategory)[] = [
-  'Semua',
-  'AI',
-  'Downloader',
-  'Utilitas',
-  'Konten',
-];
+export type SkillIcon = 'code' | 'search' | 'pen';
 
-export interface Skill {
-  name: string;
-  level: number;
-  category: 'Pengembangan' | 'SEO' | 'Konten' | 'Desain';
+export interface SkillGroup {
+  title: string;
+  subtitle: string;
+  icon: SkillIcon;
+  skills: { name: string; level: number }[];
 }
 
-export const skills: Skill[] = [
-  { name: 'HTML & CSS', level: 95, category: 'Pengembangan' },
-  { name: 'On-Page SEO', level: 94, category: 'SEO' },
-  { name: 'Technical SEO', level: 92, category: 'SEO' },
-  { name: 'Writing', level: 95, category: 'Konten' },
-  { name: 'UI/UX', level: 85, category: 'Desain' },
-  { name: 'JavaScript / TypeScript', level: 88, category: 'Pengembangan' },
-  { name: 'Content Strategy', level: 90, category: 'Konten' },
-  { name: 'Cloudflare Workers', level: 84, category: 'Pengembangan' },
+export const skillGroups: SkillGroup[] = [
+  {
+    title: 'Frontend Developer',
+    subtitle: 'Lebih dari 6 tahun',
+    icon: 'code',
+    skills: [
+      { name: 'HTML & CSS', level: 90 },
+      { name: 'JavaScript / TypeScript', level: 85 },
+      { name: 'Next.js', level: 80 },
+    ],
+  },
+  {
+    title: 'SEO & Content',
+    subtitle: 'Lebih dari 5 tahun',
+    icon: 'search',
+    skills: [
+      { name: 'On-Page SEO', level: 90 },
+      { name: 'Technical SEO', level: 85 },
+      { name: 'Content Strategy', level: 80 },
+    ],
+  },
+  {
+    title: 'Tools & Backend',
+    subtitle: 'Lebih dari 4 tahun',
+    icon: 'pen',
+    skills: [
+      { name: 'Cloudflare Workers', level: 85 },
+      { name: 'Gemini AI', level: 80 },
+      { name: 'UI/UX', level: 75 },
+    ],
+  },
+];
+
+export interface Service {
+  icon: SkillIcon;
+  title: string;
+  description: string;
+}
+
+export const services: Service[] = [
+  {
+    icon: 'code',
+    title: 'Web Development',
+    description: 'Membangun tools web & website cepat, responsif, SEO-friendly.',
+  },
+  {
+    icon: 'search',
+    title: 'SEO Optimization',
+    description: 'Optimasi on-page, technical SEO, dan strategi konten untuk ranking Google.',
+  },
+  {
+    icon: 'pen',
+    title: 'Content & Design',
+    description: 'Artikel SEO, thumbnail, dan desain UI yang menarik dan terstruktur.',
+  },
 ];
 
 export interface Social {
@@ -122,17 +149,10 @@ export const socials: Social[] = [
 export const person = {
   name: 'Guntur Putra Hermanto',
   firstName: 'Guntur',
-  roles: ['Web Developer', 'SEO Specialist', 'Content Strategist', 'UI/UX Designer'],
+  roles: ['Web Developer', 'SEO Specialist', 'Content Creator'],
   bio: 'gwntur.com berawal dari kebiasaan ngeblog saya sejak 2018. Dari sekadar menulis, berkembang menjadi membangun tools web praktis — downloader, AI chat, hingga pembuat stiker — yang dipakai ribuan orang setiap hari.',
   location: 'Indonesia',
   email: 'mail@gwntur.com',
   website: 'https://www.gwntur.com/',
   since: 2018,
 };
-
-export const timeline = [
-  { year: '2018', title: 'Memulai Ngeblog', text: 'Awal perjalanan ngeblog — menulis tutorial dan tips teknologi.' },
-  { year: '2024', title: 'gwntur.com Lahir', text: 'Blog dipoles ulang dengan fokus tutorial praktis dan tools gratis.' },
-  { year: '2025', title: 'Tools Downloader', text: 'TikTok, Facebook, dan Instagram Downloader dirilis dan dipakai ribuan pengguna.' },
-  { year: '2026', title: 'AI & Utilitas', text: 'Asisten AI, Stiker WhatsApp, dan 11+ artikel SEO diterbitkan.' },
-];
