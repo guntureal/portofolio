@@ -11,12 +11,12 @@ const categoryIcons: Record<ProjectCategory, (p: { size?: number }) => React.Rea
 };
 
 const gradients = [
-  'linear-gradient(135deg, #6C5CE7 0%, #a29bfe 100%)',
-  'linear-gradient(135deg, #5A4BD1 0%, #8b7cf6 100%)',
-  'linear-gradient(135deg, #7C3AED 0%, #c4b5fd 100%)',
-  'linear-gradient(135deg, #6C5CE7 0%, #00b894 100%)',
-  'linear-gradient(135deg, #5A4BD1 0%, #fdcb6e 100%)',
-  'linear-gradient(135deg, #7C3AED 0%, #e17055 100%)',
+  'linear-gradient(135deg, #0066cc 0%, #4d94db 100%)',
+  'linear-gradient(135deg, #0052a3 0%, #0066cc 100%)',
+  'linear-gradient(135deg, #0066cc 0%, #6fa8e0 100%)',
+  'linear-gradient(135deg, #0052a3 0%, #4d94db 100%)',
+  'linear-gradient(135deg, #0066cc 0%, #2e86de 100%)',
+  'linear-gradient(135deg, #0052a3 0%, #7cb3ec 100%)',
 ];
 
 export default function Projects() {
@@ -70,7 +70,7 @@ export default function Projects() {
                       className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium"
                       style={{ color: 'var(--accent)' }}
                     >
-                      Demo
+                      Coba
                       <IconArrowRight size={16} />
                     </a>
                   </div>
