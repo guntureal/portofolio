@@ -1,92 +1,119 @@
-/* Hero — Vellum Editorial: kutip, headline 4 baris, 3 foto inline, kontak vertikal */
+/* Hero — Modern Portfolio: teks kiri, foto blob kanan, rotating roles */
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { person } from '@/data/portfolio';
+import { person, socials } from '@/data/portfolio';
+import { IconFacebook, IconInstagram, IconGitHub, IconTelegram, IconSend } from './icons';
 import Reveal from './Reveal';
 
-export default function Hero() {
-  return (
-    <section
-      id="atas"
-      style={{ background: 'var(--hero-bg)' }}
-    >
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 md:py-28">
-      <Reveal delay={100}>
-        <h1 className="font-serif-v leading-[1.25] tracking-tight" style={{ color: 'var(--ink)', fontSize: 'clamp(44px, 7.5vw, 88px)' }}>
-          <span className="block pb-1">
-            <span style={{ opacity: 0.6 }}>“</span> Halo, saya{' '}
-            <span className="mx-2 inline-block align-middle">
-              <Image
-                src="/profile.webp"
-                alt="Foto Guntur Putra Hermanto"
-                width={96}
-                height={96}
-                priority
-                className="inline-block h-16 w-16 rounded-2xl object-cover sm:h-20 sm:w-20 lg:h-24 lg:w-24"
-              />
-            </span>{' '}
-            <em style={{ color: 'var(--accent)' }}>Guntur.</em>
-          </span>
-          <span className="block pb-1">
-            <em style={{ color: 'var(--accent)' }}>Selamat</em>{' '}
-            <span className="mx-2 inline-block align-middle">
-              <Image
-                src="/hero-cat-1.webp"
-                alt="Kucing meme di depan laptop"
-                width={80}
-                height={80}
-                priority
-                className="inline-block h-14 w-14 rounded-xl object-cover sm:h-16 sm:w-16 lg:h-20 lg:w-20"
-              />
-            </span>{' '}
-            <em style={{ color: 'var(--accent)' }}>datang</em>
-          </span>
-          <span className="block pb-1">di</span>
-          <span className="block pb-1">
-            <em style={{ color: 'var(--accent)' }}>Portofolio</em>{' '}
-            <span className="mx-2 inline-block align-middle">
-              <Image
-                src="/hero-cat-2.webp"
-                alt="Kucing meme ekspresi terkejut"
-                width={72}
-                height={72}
-                priority
-                className="inline-block h-12 w-12 rounded-lg object-cover sm:h-14 sm:w-14 lg:h-[72px] lg:w-[72px]"
-              />
-            </span>{' '}
-            saya.
-            <span style={{ opacity: 0.6 }}>”</span>
-          </span>
-        </h1>
-      </Reveal>
+const socialIcons: Record<string, (p: { size?: number }) => React.ReactElement> = {
+  Facebook: IconFacebook,
+  Instagram: IconInstagram,
+  GitHub: IconGitHub,
+  Telegram: IconTelegram,
+};
 
-      <Reveal delay={400}>
-        <div className="mt-16 space-y-6">
-          <p>
-            <span className="font-serif-v italic" style={{ color: 'var(--dim)', fontSize: 'clamp(24px, 3vw, 30px)' }}>
-              {person.location}
-            </span>
-          </p>
-          <p>
-            <a
-              href="#proyek"
-              className="accent-link font-serif-v italic"
-              style={{ fontSize: 'clamp(24px, 3vw, 30px)' }}
+export default function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setRoleIndex((i) => (i + 1) % person.roles.length), 2600);
+    return () => clearInterval(t);
+  }, []);
+
+  return (
+    <section id="home" className="relative overflow-hidden" style={{ background: 'var(--bg)' }}>
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 pb-20 pt-32 sm:px-6 md:grid-cols-2 md:pb-24 md:pt-40">
+        <Reveal delay={100}>
+          <div>
+            <p className="text-base font-medium" style={{ color: 'var(--body)' }}>
+              Hi, I&apos;m
+            </p>
+            <h1 className="mt-2 text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl" style={{ color: 'var(--ink)' }}>
+              {person.firstName}
+              <span style={{ color: 'var(--accent)' }}>.</span>
+            </h1>
+            <p className="mt-4 h-8 text-xl font-semibold sm:text-2xl" style={{ color: 'var(--accent)' }} aria-live="polite">
+              <span key={roleIndex} className="role-swap inline-block">
+                {person.roles[roleIndex]}
+              </span>
+            </p>
+            <p className="mt-4 max-w-md leading-relaxed" style={{ color: 'var(--body)' }}>
+              {person.bio}
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#contact" className="btn-primary">
+                Contact Me
+                <IconSend size={17} />
+              </a>
+              <a href="#about" className="btn-ghost">
+                About Me
+              </a>
+            </div>
+            <div className="mt-8 flex items-center gap-3">
+              {socials
+                .filter((s) => socialIcons[s.label])
+                .map((s) => {
+                  const Icon = socialIcons[s.label];
+                  return (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-btn"
+                      aria-label={s.label}
+                      title={s.label}
+                    >
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={250}>
+          <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[400px]">
+            <div className="float-slow">
+              <div className="hero-blob aspect-square">
+                <Image
+                  src="/profile.webp"
+                  alt="Foto Guntur Putra Hermanto"
+                  width={400}
+                  height={400}
+                  priority
+                  className="hero-blob-img"
+                />
+              </div>
+            </div>
+            <div
+              className="absolute -bottom-3 -left-2 rounded-2xl px-4 py-3 text-center sm:-left-6"
+              style={{ background: 'var(--card)', boxShadow: 'var(--shadow-lg)' }}
             >
-              Project
-            </a>
-          </p>
-          <p>
-            <a
-              href="#kontak"
-              className="accent-link font-serif-v italic"
-              style={{ fontSize: 'clamp(24px, 3vw, 30px)' }}
-            >
-              Kontak
-            </a>
-          </p>
-        </div>
-      </Reveal>
+              <p className="text-lg font-bold leading-none" style={{ color: 'var(--ink)' }}>
+                8+
+              </p>
+              <p className="mt-1 text-xs" style={{ color: 'var(--dim)' }}>
+                Years Experience
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
+
+      <a
+        href="#about"
+        className="mb-8 flex flex-col items-center gap-2"
+        style={{ color: 'var(--dim)' }}
+        aria-label="Scroll ke bawah"
+      >
+        <span className="flex h-9 w-6 items-start justify-center rounded-full border-2 p-1.5" style={{ borderColor: 'var(--dim)' }}>
+          <span className="scroll-wheel block h-2 w-1 rounded-full" style={{ background: 'var(--accent)' }} />
+        </span>
+        <span className="text-xs font-medium">Scroll down</span>
+      </a>
     </section>
   );
 }
