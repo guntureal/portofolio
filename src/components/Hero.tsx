@@ -1,4 +1,4 @@
-/* Hero — Modern Portfolio: teks kiri, foto blob kanan, rotating roles */
+/* Hero — Modern Portfolio: teks kiri, sampul blog kanan, rotating roles, logo melayang */
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { person, socials } from '@/data/portfolio';
 import { IconFacebook, IconInstagram, IconGitHub, IconTelegram, IconSend } from './icons';
 import Reveal from './Reveal';
+import FloatingLogos from './FloatingLogos';
 
 const socialIcons: Record<string, (p: { size?: number }) => React.ReactElement> = {
   Facebook: IconFacebook,
@@ -24,7 +25,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden" style={{ background: 'var(--bg)' }}>
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 pb-20 pt-32 sm:px-6 md:grid-cols-2 md:pb-24 md:pt-40">
+      <FloatingLogos />
+      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 pb-20 pt-32 sm:px-6 md:grid-cols-2 md:pb-24 md:pt-40">
         <Reveal delay={100}>
           <div>
             <p className="text-base font-medium" style={{ color: 'var(--body)' }}>
@@ -77,14 +79,14 @@ export default function Hero() {
         <Reveal delay={250}>
           <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[400px]">
             <div className="float-slow">
-              <div className="hero-blob aspect-square">
+              <div className="overflow-hidden rounded-2xl" style={{ boxShadow: 'var(--shadow-lg)' }}>
                 <Image
-                  src="/profile.webp"
-                  alt="Foto Guntur Putra Hermanto"
-                  width={400}
-                  height={400}
+                  src="/blog-cover.webp"
+                  alt="Foto sampul blog gwntur.com"
+                  width={1200}
+                  height={675}
                   priority
-                  className="hero-blob-img"
+                  className="aspect-video w-full object-cover"
                 />
               </div>
             </div>
@@ -105,7 +107,7 @@ export default function Hero() {
 
       <a
         href="#about"
-        className="mb-8 flex flex-col items-center gap-2"
+        className="relative z-10 mb-8 flex flex-col items-center gap-2"
         style={{ color: 'var(--dim)' }}
         aria-label="Scroll ke bawah"
       >
