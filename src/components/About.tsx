@@ -1,30 +1,77 @@
-/* About — Vellum Editorial: paragraf serif besar */
+/* About — Modern Portfolio: foto + bio + stats + Download CV */
+import Image from 'next/image';
 import { person } from '@/data/portfolio';
+import { IconDownload } from './icons';
 import Reveal from './Reveal';
+
+const stats = [
+  { value: '8+', label: 'Years Experience' },
+  { value: '6+', label: 'Completed Projects' },
+  { value: '24/7', label: 'Online Support' },
+];
 
 export default function About() {
   return (
-    <section id="tentang" style={{ borderTop: '1px solid var(--line)' }}>
-      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 md:py-20">
+    <section id="about" style={{ background: 'var(--bg-alt)' }}>
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
-            <span style={{ color: 'var(--accent)' }}>✦</span> Tentang Saya
-          </p>
-          <h2
-            className="font-serif-v mt-4 leading-snug tracking-tight"
-            style={{ color: 'var(--ink)', fontSize: 'clamp(36px, 5vw, 60px)' }}
-          >
-            Cerita di Balik <em style={{ color: 'var(--accent)' }}>gwntur.com</em>
-          </h2>
+          <div className="text-center">
+            <p className="section-subtitle">My Introduction</p>
+            <h2 className="section-title mt-2">About Me</h2>
+          </div>
         </Reveal>
-        <Reveal delay={120}>
-          <p
-            className="font-serif-v mt-8 leading-normal"
-            style={{ color: 'var(--body-2)', fontSize: 'clamp(24px, 3vw, 30px)' }}
-          >
-            {person.bio}
-          </p>
-        </Reveal>
+
+        <div className="mt-12 grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
+          <Reveal delay={100}>
+            <div className="relative mx-auto w-full max-w-[360px]">
+              <div className="overflow-hidden rounded-2xl" style={{ boxShadow: 'var(--shadow-lg)' }}>
+                <Image
+                  src="/profile.webp"
+                  alt="Foto Guntur Putra Hermanto"
+                  width={720}
+                  height={900}
+                  className="aspect-[4/5] w-full object-cover"
+                />
+              </div>
+              <div
+                className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold"
+                style={{ background: 'var(--accent)', color: '#fff', boxShadow: 'var(--shadow-lg)' }}
+              >
+                Since 2018 — gwntur.com
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <div>
+              <p className="leading-relaxed" style={{ color: 'var(--body)' }}>
+                {person.bio}
+              </p>
+              <p className="mt-4 leading-relaxed" style={{ color: 'var(--body)' }}>
+                Saya membangun tools yang benar-benar dipakai orang — downloader, AI chat, hingga pembuat stiker — dan
+                menulis tutorial SEO yang mudah dipahami. Setiap tools melewati validasi penuh sebelum dirilis.
+              </p>
+
+              <div className="mt-8 grid grid-cols-3 gap-4">
+                {stats.map((s) => (
+                  <div key={s.label} className="text-center">
+                    <p className="text-2xl font-bold sm:text-3xl" style={{ color: 'var(--ink)' }}>
+                      {s.value}
+                    </p>
+                    <p className="mt-1 text-xs sm:text-sm" style={{ color: 'var(--dim)' }}>
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <a href={`mailto:${person.email}`} className="btn-primary mt-8">
+                Download CV
+                <IconDownload size={17} />
+              </a>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
