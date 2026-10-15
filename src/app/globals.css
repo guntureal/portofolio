@@ -168,7 +168,7 @@ body {
   animation: float-slow 5s ease-in-out infinite;
 }
 
-/* ============ Floating favicon logos (naik ke atas) ============ */
+/* ============ Floating favicon logos (naik, goyang, berputar) ============ */
 .floating-logos {
   position: absolute;
   inset: 0;
@@ -181,8 +181,23 @@ body {
   position: absolute;
   top: 105%;
   display: block;
-  animation: float-up linear infinite;
   will-change: transform, opacity;
+}
+
+.floating-logo--rise {
+  animation: float-rise var(--rise-duration, 18s) var(--rise-easing, linear) var(--rise-delay, 0s) infinite;
+}
+
+.floating-logo--sway {
+  animation:
+    float-rise var(--rise-duration, 18s) var(--rise-easing, linear) var(--rise-delay, 0s) infinite,
+    float-sway var(--sway-duration, 4s) ease-in-out var(--rise-delay, 0s) infinite alternate;
+}
+
+.floating-logo--spin {
+  animation:
+    float-rise var(--rise-duration, 18s) var(--rise-easing, linear) var(--rise-delay, 0s) infinite,
+    float-spin var(--sway-duration, 4s) linear var(--rise-delay, 0s) infinite;
 }
 
 .floating-logo img {
@@ -190,20 +205,40 @@ body {
   border-radius: 8px;
 }
 
-@keyframes float-up {
+@keyframes float-rise {
   0% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) scale(var(--scale-from, 0.9));
     opacity: 0;
   }
-  8% {
-    opacity: 1;
+  12% {
+    opacity: var(--max-opacity, 0.05);
   }
-  90% {
-    opacity: 1;
+  85% {
+    opacity: var(--max-opacity, 0.05);
   }
   100% {
-    transform: translate3d(var(--drift, 0px), -1150px, 0) rotate(18deg);
+    transform: translate3d(var(--drift, 0px), -1150px, 0) scale(var(--scale-to, 1.1));
     opacity: 0;
+  }
+}
+
+@keyframes float-sway {
+  0% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+  100% {
+    translate: var(--sway, 30px) 0;
+    rotate: calc(var(--rotate, 120deg) * 0.25);
+  }
+}
+
+@keyframes float-spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: var(--rotate, 180deg);
   }
 }
 
