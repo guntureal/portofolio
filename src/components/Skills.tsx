@@ -1,51 +1,116 @@
-/* Skills — Vellum Editorial: grup label + daftar dipisah " · " biru, selang-seling italic */
-import { skills } from '@/data/portfolio';
+/* Skills — Modern Portfolio: accordion groups + animated bars */
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { skillGroups, type SkillIcon } from '@/data/portfolio';
+import { IconCode, IconSearch, IconPen, IconChevronDown } from './icons';
 import Reveal from './Reveal';
 
-const groups: { label: string; category: string }[] = [
-  { label: 'Pengembangan Web', category: 'Pengembangan' },
-  { label: 'SEO', category: 'SEO' },
-  { label: 'Konten & Desain', category: 'Konten' },
-];
+const groupIcons: Record<SkillIcon, (p: { size?: number }) => React.ReactElement> = {
+  code: IconCode,
+  search: IconSearch,
+  pen: IconPen,
+};
 
 export default function Skills() {
+  const [openIndex, setOpenIndex] = useState(0);
+  const [barsOn, setBarsOn] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setBarsOn(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section id="keahlian" style={{ borderTop: '1px solid var(--line)', background: 'var(--bg-alt)' }}>
-      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 md:py-20">
+    <section id="skills" ref={sectionRef} style={{ background: 'var(--bg)' }}>
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-24">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
-            <span style={{ color: 'var(--accent)' }}>✦</span> Keahlian
-          </p>
-          <h2
-            className="font-serif-v mt-4 leading-snug tracking-tight"
-            style={{ color: 'var(--ink)', fontSize: 'clamp(36px, 5vw, 60px)' }}
-          >
-            Apa yang Saya <em style={{ color: 'var(--accent)' }}>Kuasai</em>
-          </h2>
+          <div className="text-center">
+            <p className="section-subtitle">My technical level</p>
+            <h2 className="section-title mt-2">Skills</h2>
+          </div>
         </Reveal>
 
-        <div className="mt-10 space-y-8">
-          {groups.map((g, gi) => {
-            const items = skills.filter(
-              (s) => s.category === g.category || (g.category === 'Konten' && s.category === 'Desain')
-            );
+        <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
+          {skillGroups.map((group, gi) => {
+            const Icon = groupIcons[group.icon];
+            const open = openIndex === gi;
             return (
-              <Reveal key={g.label} delay={gi * 100}>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--dim)' }}>
-                    <span style={{ color: 'var(--accent)' }}>✦</span> {g.label}
-                  </p>
-                  <p
-                    className="font-serif-v mt-4 leading-normal"
-                    style={{ color: 'var(--body-2)', fontSize: 'clamp(24px, 3vw, 30px)' }}
+              <Reveal key={group.title} delay={gi * 100}>
+                <div
+                  className="h-full rounded-2xl p-6"
+                  style={{ background: 'var(--card)', boxShadow: 'var(--shadow)' }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(open ? -1 : gi)}
+                    className="flex w-full items-center gap-4 text-left"
+                    aria-expanded={open}
                   >
-                    {items.map((s, i) => (
-                      <span key={s.name}>
-                        {i > 0 && <span style={{ color: 'var(--accent)' }}> · </span>}
-                        {i % 2 === 1 ? <em>{s.name}</em> : s.name}
+                    <span
+                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                      style={{ background: 'var(--accent-soft)', color: 'var(--accent)' }}
+                    >
+                      <Icon size={24} />
+                    </span>
+                    <span className="flex-1">
+                      <span className="block text-base font-semibold" style={{ color: 'var(--ink)' }}>
+                        {group.title}
                       </span>
-                    ))}
-                  </p>
+                      <span className="block text-sm" style={{ color: 'var(--dim)' }}>
+                        {group.subtitle}
+                      </span>
+                    </span>
+                    <span
+                      style={{
+                        color: 'var(--accent)',
+                        transform: open ? 'rotate(180deg)' : 'none',
+                        transition: 'transform 0.3s ease',
+                      }}
+                    >
+                      <IconChevronDown size={20} />
+                    </span>
+                  </button>
+
+                  <div className={`skill-group-body ${open ? 'open' : ''}`}>
+                    <div className="skill-group-inner">
+                      <div className="space-y-5 pt-6">
+                        {group.skills.map((s) => (
+                          <div key={s.name}>
+                            <div className="mb-2 flex items-center justify-between text-sm">
+                              <span className="font-medium" style={{ color: 'var(--ink)' }}>
+                                {s.name}
+                              </span>
+                              <span style={{ color: 'var(--accent)' }}>{s.level}%</span>
+                            </div>
+                            <div className="skill-track">
+                              <div
+                                className="skill-fill"
+                                style={{ width: open && barsOn ? `${s.level}%` : '0%' }}
+                                role="progressbar"
+                                aria-valuenow={s.level}
+                                aria-valuemin={0}
+                                aria-valuemax={100}
+                                aria-label={s.name}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             );
