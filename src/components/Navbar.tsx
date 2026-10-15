@@ -1,93 +1,42 @@
-/* Navbar — Vellum Editorial: 44px, putih, border bawah */
+/* Navbar — Modern Portfolio: logo + links + theme toggle + hamburger */
 'use client';
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-
-/* Ikon SVG stroke tipis (16px) — profesional, tanpa emoji/unicode */
-const iconProps = {
-  width: 16,
-  height: 16,
-  viewBox: '0 0 24 24',
-  fill: 'none',
-  stroke: 'currentColor',
-  strokeWidth: 1.8,
-  strokeLinecap: 'round' as const,
-  strokeLinejoin: 'round' as const,
-  'aria-hidden': true,
-};
-
-const IconUser = () => (
-  <svg {...iconProps}>
-    <circle cx="12" cy="8" r="4" />
-    <path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" />
-  </svg>
-);
-
-const IconCode = () => (
-  <svg {...iconProps}>
-    <path d="M8 6l-5 6 5 6" />
-    <path d="M16 6l5 6-5 6" />
-    <path d="M13 4l-2 16" />
-  </svg>
-);
-
-const IconFolder = () => (
-  <svg {...iconProps}>
-    <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
-  </svg>
-);
-
-const IconRoute = () => (
-  <svg {...iconProps}>
-    <path d="M4 21 C 9 21, 7 14, 12 13 S 16 10, 17 9" />
-    <circle cx="4" cy="21" r="1.8" />
-    <path d="M15 4.5 a3 3 0 1 1 6 0 c0 2.2-3 4.5-3 4.5 S15 6.7 15 4.5 z" />
-    <circle cx="18" cy="4.5" r="1" />
-  </svg>
-);
-
-const IconMail = () => (
-  <svg {...iconProps}>
-    <rect x="3" y="5" width="18" height="14" rx="2" />
-    <path d="M3 7l9 6 9-6" />
-  </svg>
-);
-
-const IconSun = () => (
-  <svg {...iconProps}>
-    <circle cx="12" cy="12" r="4" />
-    <path d="M12 2v2" />
-    <path d="M12 20v2" />
-    <path d="M4.9 4.9l1.4 1.4" />
-    <path d="M17.7 17.7l1.4 1.4" />
-    <path d="M2 12h2" />
-    <path d="M20 12h2" />
-    <path d="M4.9 19.1l1.4-1.4" />
-    <path d="M17.7 6.3l1.4-1.4" />
-  </svg>
-);
-
-const IconMoon = () => (
-  <svg {...iconProps}>
-    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
-  </svg>
-);
+import { IconSun, IconMoon, IconMenu, IconClose } from './icons';
 
 const links = [
-  { label: 'Tentang', href: '#tentang', Icon: IconUser },
-  { label: 'Keahlian', href: '#keahlian', Icon: IconCode },
-  { label: 'Proyek', href: '#proyek', Icon: IconFolder },
-  { label: 'Perjalanan', href: '#perjalanan', Icon: IconRoute },
-  { label: 'Kontak', href: '#kontak', Icon: IconMail },
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Services', href: '#services' },
+  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
   const [dark, setDark] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState('#home');
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains('dark'));
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      let current = '#home';
+      for (const l of links) {
+        const el = document.querySelector(l.href);
+        if (el && el.getBoundingClientRect().top <= 140) current = l.href;
+      }
+      setActive(current);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -103,29 +52,26 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50"
-      style={{ background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}
+      className="fixed inset-x-0 top-0 z-50"
+      style={{
+        background: 'var(--bg)',
+        borderBottom: scrolled ? '1px solid var(--line)' : '1px solid transparent',
+        boxShadow: scrolled ? 'var(--shadow)' : 'none',
+        transition: 'box-shadow 0.3s ease, border-color 0.3s ease',
+      }}
     >
-      <div className="mx-auto flex h-11 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <a href="#atas" className="flex items-center gap-2.5" aria-label="Beranda">
-          <Image
-            src="/favicon.png"
-            alt="Logo gwntur.com"
-            width={28}
-            height={28}
-            className="h-7 w-7 rounded-md"
-            priority
-          />
-          <span className="font-serif-v text-base" style={{ color: 'var(--ink)' }}>
-            gwntur<span style={{ color: 'var(--accent)' }}>.com</span>
+      <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+        <a href="#home" className="flex items-center gap-2.5" aria-label="Beranda">
+          <Image src="/favicon.png" alt="Logo gwntur.com" width={30} height={30} className="h-8 w-8 rounded-lg" priority />
+          <span className="text-lg font-bold tracking-tight" style={{ color: 'var(--ink)' }}>
+            Guntur<span style={{ color: 'var(--accent)' }}>.</span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Navigasi utama">
-          {links.map(({ label, href, Icon }) => (
-            <a key={href} href={href} className="nav-link flex items-center gap-1.5 text-sm">
-              <Icon />
-              {label}
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Navigasi utama">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className={`nav-link ${active === l.href ? 'active' : ''}`}>
+              {l.label}
             </a>
           ))}
           <button
@@ -135,7 +81,7 @@ export default function Navbar() {
             aria-label={dark ? 'Ubah ke mode terang' : 'Ubah ke mode gelap'}
             title={dark ? 'Mode terang' : 'Mode gelap'}
           >
-            {dark ? <IconSun /> : <IconMoon />}
+            {dark ? <IconSun size={18} /> : <IconMoon size={18} />}
           </button>
         </nav>
 
@@ -147,16 +93,16 @@ export default function Navbar() {
             aria-label={dark ? 'Ubah ke mode terang' : 'Ubah ke mode gelap'}
             title={dark ? 'Mode terang' : 'Mode gelap'}
           >
-            {dark ? <IconSun /> : <IconMoon />}
+            {dark ? <IconSun size={18} /> : <IconMoon size={18} />}
           </button>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="nav-link text-sm"
+            className="theme-toggle"
             aria-expanded={open}
-            aria-label="Buka menu"
+            aria-label={open ? 'Tutup menu' : 'Buka menu'}
           >
-            Menu
+            {open ? <IconClose size={18} /> : <IconMenu size={18} />}
           </button>
         </div>
       </div>
@@ -167,15 +113,14 @@ export default function Navbar() {
           style={{ borderColor: 'var(--line)', background: 'var(--bg)' }}
           aria-label="Navigasi seluler"
         >
-          {links.map(({ label, href, Icon }) => (
+          {links.map((l) => (
             <a
-              key={href}
-              href={href}
+              key={l.href}
+              href={l.href}
               onClick={() => setOpen(false)}
-              className="nav-link flex items-center gap-1.5 py-2.5 text-sm"
+              className={`nav-link block py-2.5 text-sm ${active === l.href ? 'active' : ''}`}
             >
-              <Icon />
-              {label}
+              {l.label}
             </a>
           ))}
         </nav>
