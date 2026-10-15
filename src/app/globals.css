@@ -1,51 +1,51 @@
-/* Portofolio Guntur — Vellum Editorial (aksen biru #0066cc) */
+/* Portofolio Guntur — Modern Portfolio (aksen ungu #6C5CE7) */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --bg: #ffffff;
-  --bg-alt: #f8fafc;
+  --bg-alt: #f8f7ff;
+  --card: #ffffff;
   --ink: #1a1a2e;
-  --body: #45455c;
-  --body-2: #55556b;
-  --body-3: #6b6b80;
+  --body: #4a4a68;
   --dim: #8a8aa0;
-  --dim-2: #a3a3b5;
-  --accent: #0066cc;
-  --accent-hover: #0052a3;
-  --line: #e8ecf1;
-  --timeline: #d9e2ec;
-  --btn: #000000;
-  --hero-bg: #f5f2ef;
+  --line: #e8e6f5;
+  --accent: #6c5ce7;
+  --accent-hover: #5a4bd1;
+  --accent-soft: rgba(108, 92, 231, 0.1);
+  --accent-soft-2: rgba(108, 92, 231, 0.16);
+  --shadow: 0 10px 30px rgba(108, 92, 231, 0.12);
+  --shadow-lg: 0 20px 45px rgba(108, 92, 231, 0.18);
+  --input-bg: #f8f7ff;
 }
 
 .dark {
-  --bg: #14171f;
-  --bg-alt: #1a1d28;
-  --ink: #eef1f6;
-  --body: #c3c8d6;
-  --body-2: #b0b5c6;
-  --body-3: #9aa0b4;
-  --dim: #8a8fa3;
-  --dim-2: #6e7488;
-  --accent: #4d9fff;
-  --accent-hover: #7ab8ff;
-  --line: #2c3140;
-  --timeline: #2c3140;
-  --btn: #eef1f6;
-  --hero-bg: #14171f;
+  --bg: #0f0f1e;
+  --bg-alt: #17172b;
+  --card: #1a1a2e;
+  --ink: #f0effa;
+  --body: #b8b8d0;
+  --dim: #8a8aa8;
+  --line: #2a2a45;
+  --accent: #8b7cf6;
+  --accent-hover: #a294f9;
+  --accent-soft: rgba(139, 124, 246, 0.14);
+  --accent-soft-2: rgba(139, 124, 246, 0.22);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.45);
+  --input-bg: #17172b;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 60px;
+  scroll-padding-top: 76px;
 }
 
 body {
   background: var(--bg);
   color: var(--body);
-  font-family: 'Rubik', system-ui, -apple-system, sans-serif;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -55,30 +55,96 @@ body {
   color: #fff;
 }
 
-/* ============ Serif ============ */
-.font-serif-v {
-  font-family: 'Playfair Display', Georgia, serif;
-}
-
-/* ============ Accent link ============ */
-.accent-link {
+/* ============ Section header ============ */
+.section-title {
   color: var(--ink);
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent);
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-.accent-link:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent-hover);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
 }
 
-/* ============ Theme toggle button ============ */
+.section-subtitle {
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ============ Buttons ============ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 500;
+  padding: 0.9rem 1.9rem;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(108, 92, 231, 0.35);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(108, 92, 231, 0.45);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  font-weight: 500;
+  padding: 0.9rem 1.9rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--accent);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-ghost:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ============ Nav ============ */
+.nav-link {
+  color: var(--body);
+  font-weight: 500;
+  font-size: 0.925rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 9999px;
   border: 1px solid var(--line);
   background: var(--bg-alt);
@@ -86,44 +152,135 @@ body {
   cursor: pointer;
   transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
+
 .theme-toggle:hover {
   color: var(--accent);
   border-color: var(--accent);
 }
 
-/* ============ Nav link ============ */
-.nav-link {
-  color: var(--body);
-  transition: color 0.3s ease;
-}
-.nav-link:hover {
-  color: var(--accent);
+/* ============ Hero blob ============ */
+.hero-blob {
+  border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
+  background: linear-gradient(135deg, var(--accent) 0%, #a29bfe 100%);
+  padding: 10px;
+  box-shadow: var(--shadow-lg);
 }
 
-/* ============ Side nav ============ */
-.side-nav-item {
-  transition: color 0.3s ease;
+.hero-blob-img {
+  border-radius: 55% 45% 52% 48% / 46% 52% 48% 54%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-alt);
 }
-.side-nav-item .side-star {
-  color: #c3c8d6;
-  transition: color 0.3s ease;
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
-.side-nav-item .side-label {
-  color: var(--dim);
-  transition: color 0.3s ease;
+
+.float-slow {
+  animation: float-slow 5s ease-in-out infinite;
 }
-.side-nav-item:hover .side-star {
-  color: var(--dim);
+
+@keyframes scroll-wheel {
+  0% { opacity: 1; transform: translateY(0); }
+  70% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 0; transform: translateY(0); }
 }
-.side-nav-item:hover .side-label {
+
+.scroll-wheel {
+  animation: scroll-wheel 1.8s ease-in-out infinite;
+}
+
+@keyframes fade-swap {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.role-swap {
+  animation: fade-swap 0.45s ease both;
+}
+
+/* ============ Social icon buttons ============ */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: var(--accent-soft);
   color: var(--accent);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
-.side-nav-item.active .side-star {
-  color: var(--accent);
+
+.social-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-3px);
 }
-.side-nav-item.active .side-label {
+
+/* ============ Cards ============ */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============ Skill bars ============ */
+.skill-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent), #a29bfe);
+  width: 0;
+  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skill-group-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.skill-group-body.open {
+  grid-template-rows: 1fr;
+}
+
+.skill-group-inner {
+  overflow: hidden;
+}
+
+/* ============ Form ============ */
+.form-input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1.5px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
   color: var(--ink);
-  font-style: italic;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: var(--dim);
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  background: var(--bg);
 }
 
 /* ============ Reveal entrance ============ */
@@ -133,17 +290,10 @@ body {
   transition: opacity 0.6s ease, transform 0.6s ease;
   transition-delay: var(--reveal-delay, 0ms);
 }
+
 .reveal.is-visible {
   opacity: 1;
   transform: none;
-}
-
-/* ============ Project title hover ============ */
-.project-title {
-  transition: color 0.3s ease;
-}
-.project-title:hover {
-  color: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -152,8 +302,10 @@ body {
     transform: none;
     transition: none;
   }
-  .accent-link, .nav-link, .side-nav-item, .project-title, .theme-toggle {
-    transition: none !important;
+  .float-slow,
+  .scroll-wheel,
+  .role-swap {
+    animation: none;
   }
   html {
     scroll-behavior: auto;
