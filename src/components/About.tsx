@@ -26,7 +26,7 @@ export default function About() {
               <div className="overflow-hidden rounded-2xl" style={{ boxShadow: 'var(--shadow-lg)' }}>
                 <Image
                   src="/profile.webp"
-                  alt="Foto Guntur Putra Hermanto"
+                  alt="Foto Guntur"
                   width={720}
                   height={900}
                   className="aspect-[4/5] w-full object-cover"
@@ -36,7 +36,7 @@ export default function About() {
                 className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold"
                 style={{ background: 'var(--accent)', color: '#fff', boxShadow: 'var(--shadow-lg)' }}
               >
-                Guntur Putra Hermanto
+                Guntur
               </div>
             </div>
           </Reveal>
