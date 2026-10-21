@@ -147,7 +147,7 @@ export const socials: Social[] = [
 ];
 
 export const person = {
-  name: 'Guntur Putra Hermanto',
+  name: 'Guntur',
   firstName: 'Guntur',
   roles: ['Web Developer', 'SEO Specialist', 'Content Creator'],
   bio: 'gwntur.com berawal dari kebiasaan ngeblog saya sejak 2018. Dari sekadar menulis, berkembang menjadi membangun tools web praktis — downloader, AI chat, hingga pembuat stiker — yang dipakai ribuan orang setiap hari.',
