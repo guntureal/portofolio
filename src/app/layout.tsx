@@ -8,9 +8,9 @@ import { person } from '@/data/portfolio';
 export const metadata: Metadata = {
   title: 'Portofolio | Guntur',
   description:
-    'Portofolio Guntur Putra Hermanto: Web Developer, SEO Specialist, Content Strategist, UI/UX Designer. Pembangun tools web gwntur.com — AI chat, downloader, dan utilitas gratis.',
-  keywords: ['Guntur Putra Hermanto', 'gwntur', 'Web Developer Indonesia', 'SEO Specialist', 'Portofolio'],
-  authors: [{ name: 'Guntur Putra Hermanto', url: 'https://www.gwntur.com/' }],
+    'Portofolio Guntur: Web Developer, SEO Specialist, Content Strategist, UI/UX Designer. Pembangun tools web gwntur.com — AI chat, downloader, dan utilitas gratis.',
+  keywords: ['Guntur', 'gwntur', 'Web Developer Indonesia', 'SEO Specialist', 'Portofolio'],
+  authors: [{ name: 'Guntur', url: 'https://www.gwntur.com/' }],
   icons: { icon: '/favicon.png' },
   openGraph: {
     type: 'website',
