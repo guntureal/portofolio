@@ -11,12 +11,14 @@ export default function Contact() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     const name = String(data.get('name') || '').trim();
     const email = String(data.get('email') || '').trim();
     const message = String(data.get('message') || '').trim();
     const text = encodeURIComponent(`Pesan dari Portofolio\n\nNama: ${name}\nEmail: ${email}\n\n${message}`);
     window.open(`https://t.me/gwntur?text=${text}`, '_blank', 'noopener,noreferrer');
+    form.reset();
     setSent(true);
   };
 
