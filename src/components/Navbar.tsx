@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { IconSun, IconMoon, IconMenu, IconClose } from './icons';
+import { IconSun, IconMoon, IconMenu, IconClose, IconArrowRight } from './icons';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -19,14 +19,25 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('#home');
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains('dark'));
   }, []);
 
   useEffect(() => {
+    let lastY = window.scrollY;
     const onScroll = () => {
-      setScrolled(window.scrollY > 24);
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      if (open) {
+        setHidden(false);
+      } else if (y > 140 && y > lastY + 4) {
+        setHidden(true);
+      } else if (y < lastY - 4) {
+        setHidden(false);
+      }
+      lastY = y;
       let current = '#home';
       for (const l of links) {
         const el = document.querySelector(l.href);
@@ -37,7 +48,7 @@ export default function Navbar() {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [open ]);
 
   const toggleTheme = () => {
     const next = !dark;
@@ -56,7 +67,8 @@ export default function Navbar() {
       style={{
         borderBottom: scrolled ? '1px solid var(--line)' : '1px solid transparent',
         boxShadow: scrolled ? 'var(--shadow)' : 'none',
-        transition: 'box-shadow 0.3s ease, border-color 0.3s ease',
+        transform: hidden ? 'translateY(-100%)' : 'translateY(0)',
+        transition: 'transform 0.35s ease, box-shadow 0.3s ease, border-color 0.3s ease',
       }}
     >
       <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
@@ -107,22 +119,27 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav
-          className="glass-header border-t px-4 py-3 md:hidden"
-          style={{ borderColor: 'var(--line)' }}
-          aria-label="Navigasi seluler"
-        >
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className={`nav-link block py-2.5 text-sm ${active === l.href ? 'active' : ''}`}
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
+        <div className="px-4 pb-4 md:hidden">
+          <nav
+            className="menu-panel rounded-2xl p-2"
+            style={{ background: 'var(--card)', border: '1px solid var(--line)', boxShadow: 'var(--shadow-lg)' }}
+            aria-label="Navigasi seluler"
+          >
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className={`mobile-nav-link ${active === l.href ? 'active' : ''}`}
+              >
+                <span>{l.label}</span>
+                <span className="mobile-nav-arrow">
+                  <IconArrowRight size={15} />
+                </span>
+              </a>
+            ))}
+          </nav>
+        </div>
       )}
     </header>
   );
