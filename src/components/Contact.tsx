@@ -1,4 +1,4 @@
-/* Contact — Modern Portfolio: info kiri + form kanan (mailto) */
+/* Contact — Modern Portfolio: info kiri + form kanan (redirect ke Telegram) */
 'use client';
 
 import { useState, type FormEvent } from 'react';
@@ -12,12 +12,11 @@ export default function Contact() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const name = String(data.get('name') || '');
-    const email = String(data.get('email') || '');
-    const message = String(data.get('message') || '');
-    const subject = encodeURIComponent(`Pesan dari ${name} via Portofolio`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:${person.email}?subject=${subject}&body=${body}`;
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const message = String(data.get('message') || '').trim();
+    const text = encodeURIComponent(`Pesan dari Portofolio\n\nNama: ${name}\nEmail: ${email}\n\n${message}`);
+    window.open(`https://t.me/gwntur?text=${text}`, '_blank', 'noopener,noreferrer');
     setSent(true);
   };
 
@@ -136,7 +135,7 @@ export default function Contact() {
               {sent && (
                 <p className="mt-4 flex items-center gap-2 text-sm" style={{ color: 'var(--accent)' }} role="status">
                   <IconCheck size={16} />
-                  Terima kasih! Aplikasi email Anda terbuka — silakan kirim pesannya.
+                  Telegram terbuka dengan pesan yang sudah terisi — tekan kirim di sana untuk mengirimnya.
                 </p>
               )}
             </form>
