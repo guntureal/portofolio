@@ -10,7 +10,7 @@ const links = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Project', href: '#portfolio' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -52,9 +52,8 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50"
+      className="glass-header fixed inset-x-0 top-0 z-50"
       style={{
-        background: 'var(--bg)',
         borderBottom: scrolled ? '1px solid var(--line)' : '1px solid transparent',
         boxShadow: scrolled ? 'var(--shadow)' : 'none',
         transition: 'box-shadow 0.3s ease, border-color 0.3s ease',
@@ -68,7 +67,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Navigasi utama">
+        <nav className="hidden items-center gap-1.5 md:flex" aria-label="Navigasi utama">
           {links.map((l) => (
             <a key={l.href} href={l.href} className={`nav-link ${active === l.href ? 'active' : ''}`}>
               {l.label}
@@ -77,7 +76,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="theme-toggle"
+            className="theme-toggle ml-2"
             aria-label={dark ? 'Ubah ke mode terang' : 'Ubah ke mode gelap'}
             title={dark ? 'Mode terang' : 'Mode gelap'}
           >
@@ -109,8 +108,8 @@ export default function Navbar() {
 
       {open && (
         <nav
-          className="border-t px-4 py-3 md:hidden"
-          style={{ borderColor: 'var(--line)', background: 'var(--bg)' }}
+          className="glass-header border-t px-4 py-3 md:hidden"
+          style={{ borderColor: 'var(--line)' }}
           aria-label="Navigasi seluler"
         >
           {links.map((l) => (
