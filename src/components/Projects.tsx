@@ -26,7 +26,7 @@ export default function Projects() {
         <Reveal>
           <div className="text-center">
             <p className="section-subtitle">Most recent work</p>
-            <h2 className="section-title mt-2">Portfolio</h2>
+            <h2 className="section-title mt-2">Project</h2>
             <p className="mx-auto mt-4 max-w-xl leading-relaxed" style={{ color: 'var(--body)' }}>
               Tools web gratis yang live di gwntur.com — dipakai setiap hari, tanpa instalasi.
             </p>
@@ -70,7 +70,7 @@ export default function Projects() {
                       className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium"
                       style={{ color: 'var(--accent)' }}
                     >
-                      Coba
+                      {p.id === 'blog' ? 'Kunjungi' : 'Coba'}
                       <IconArrowRight size={16} />
                     </a>
                   </div>
