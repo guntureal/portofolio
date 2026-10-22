@@ -136,14 +136,15 @@ export interface Social {
   label: string;
   href: string;
   handle: string;
+  brand: 'facebook' | 'instagram' | 'github' | 'telegram' | 'email';
 }
 
 export const socials: Social[] = [
-  { label: 'Facebook', href: 'https://www.facebook.com/gwntur', handle: 'gwntur' },
-  { label: 'Instagram', href: 'https://www.instagram.com/gwntur', handle: '@gwntur' },
-  { label: 'GitHub', href: 'https://github.com/guntureal', handle: 'guntureal' },
-  { label: 'Telegram', href: 'https://t.me/gwntur', handle: 'gwntur' },
-  { label: 'Email', href: 'mailto:mail@gwntur.com', handle: 'mail@gwntur.com' },
+  { label: 'Facebook', href: 'https://www.facebook.com/gwntur', handle: 'gwntur', brand: 'facebook' },
+  { label: 'Instagram', href: 'https://www.instagram.com/gwntur', handle: '@gwntur', brand: 'instagram' },
+  { label: 'GitHub', href: 'https://github.com/guntureal', handle: 'guntureal', brand: 'github' },
+  { label: 'Telegram', href: 'https://t.me/gwntur', handle: 'gwntur', brand: 'telegram' },
+  { label: 'Email', href: 'mailto:mail@gwntur.com', handle: 'mail@gwntur.com', brand: 'email' },
 ];
 
 export const person = {
