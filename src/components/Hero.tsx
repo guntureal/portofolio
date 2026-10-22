@@ -3,17 +3,10 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { person, socials } from '@/data/portfolio';
-import { IconFacebook, IconInstagram, IconGitHub, IconTelegram, IconSend } from './icons';
+import { person } from '@/data/portfolio';
+import { IconSend } from './icons';
 import Reveal from './Reveal';
 import FloatingLogos from './FloatingLogos';
-
-const socialIcons: Record<string, (p: { size?: number }) => React.ReactElement> = {
-  Facebook: IconFacebook,
-  Instagram: IconInstagram,
-  GitHub: IconGitHub,
-  Telegram: IconTelegram,
-};
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -52,27 +45,6 @@ export default function Hero() {
               <a href="#about" className="btn-ghost">
                 About Me
               </a>
-            </div>
-            <div className="mt-8 flex items-center gap-3">
-              {socials
-                .filter((s) => socialIcons[s.label])
-                .map((s) => {
-                  const Icon = socialIcons[s.label];
-                  return (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-btn"
-                      data-brand={s.brand}
-                      aria-label={s.label}
-                      title={s.label}
-                    >
-                      <Icon size={18} />
-                    </a>
-                  );
-                })}
             </div>
           </div>
         </Reveal>
