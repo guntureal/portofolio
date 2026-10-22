@@ -17,7 +17,7 @@ export const projects: Project[] = [
       'Chat AI fullscreen bertenaga Gemini dengan input suara, unggah file (foto, video, audio, PDF), text-to-speech, riwayat multi-sesi, dan mode gelap otomatis.',
     category: 'AI',
     tags: ['Gemini', 'Next.js', 'Cloudflare Workers', 'TTS'],
-    url: 'https://www.gwntur.com/',
+    url: 'https://www.gwntur.com/p/ai-chatbot.html',
   },
   {
     id: 'tiktok-downloader',
@@ -26,7 +26,7 @@ export const projects: Project[] = [
       'Unduh video dan foto TikTok tanpa watermark dalam kualitas asli. Dilengkapi cache hasil, fallback API, dan pratinjau pemutar.',
     category: 'Downloader',
     tags: ['Video', 'Tanpa Watermark', 'Cache'],
-    url: 'https://www.gwntur.com/',
+    url: 'https://www.gwntur.com/p/tiktok-downloader.html',
   },
   {
     id: 'facebook-downloader',
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       'Unduh video dan Reels Facebook dalam kualitas HD. Mendukung tautan /share/ dan fb.watch dengan resolusi URL sisi server.',
     category: 'Downloader',
     tags: ['Video', 'Reels', 'HD'],
-    url: 'https://www.gwntur.com/',
+    url: 'https://www.gwntur.com/p/facebook-downloader.html',
   },
   {
     id: 'instagram-downloader',
@@ -44,7 +44,7 @@ export const projects: Project[] = [
       'Unduh video, Reels, dan foto Instagram tanpa aplikasi. Video HD dengan audio, foto carousel resolusi penuh.',
     category: 'Downloader',
     tags: ['Video', 'Reels', 'Foto HD'],
-    url: 'https://www.gwntur.com/',
+    url: 'https://www.gwntur.com/p/instagram-downloader.html',
   },
   {
     id: 'stiker-whatsapp',
@@ -53,7 +53,7 @@ export const projects: Project[] = [
       'Buat stiker WhatsApp sendiri di HP: pilih foto, potong, tambah teks, dan simpan ke Favorit. Tanpa aplikasi tambahan.',
     category: 'Utilitas',
     tags: ['WebP', 'Editor', 'Mobile'],
-    url: 'https://www.gwntur.com/',
+    url: 'https://www.gwntur.com/p/stiker-whatsapp.html',
   },
   {
     id: 'blog',
