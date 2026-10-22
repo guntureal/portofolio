@@ -280,6 +280,48 @@ body {
   transform: translateY(-3px);
 }
 
+/* Warna brand asli tiap layanan (tampilan awal) */
+.social-btn[data-brand='facebook'] {
+  color: #1877f2;
+  background: rgba(24, 119, 242, 0.12);
+}
+.social-btn[data-brand='facebook']:hover {
+  background: #1877f2;
+  color: #fff;
+}
+.social-btn[data-brand='instagram'] {
+  color: #d62976;
+  background: rgba(214, 41, 118, 0.1);
+}
+.social-btn[data-brand='instagram']:hover {
+  background: linear-gradient(45deg, #feda75 0%, #fa7e1e 25%, #d62976 55%, #962fbf 80%, #4f5bd5 100%);
+  color: #fff;
+}
+.social-btn[data-brand='github'] {
+  color: #181717;
+  background: rgba(24, 23, 23, 0.08);
+}
+.social-btn[data-brand='github']:hover {
+  background: #181717;
+  color: #fff;
+}
+.dark .social-btn[data-brand='github'] {
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
+}
+.dark .social-btn[data-brand='github']:hover {
+  background: #f0f0f0;
+  color: #181717;
+}
+.social-btn[data-brand='telegram'] {
+  color: #229ed9;
+  background: rgba(34, 158, 217, 0.12);
+}
+.social-btn[data-brand='telegram']:hover {
+  background: #229ed9;
+  color: #fff;
+}
+
 /* ============ Cards ============ */
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
