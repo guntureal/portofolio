@@ -65,6 +65,7 @@ export default function Hero() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="social-btn"
+                      data-brand={s.brand}
                       aria-label={s.label}
                       title={s.label}
                     >
