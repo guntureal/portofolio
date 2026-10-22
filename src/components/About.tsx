@@ -1,13 +1,15 @@
-/* About — Modern Portfolio: foto + bio + stats */
+/* About — Modern Portfolio: foto + bio + daftar media sosial */
 import Image from 'next/image';
-import { person } from '@/data/portfolio';
+import { person, socials } from '@/data/portfolio';
+import { IconFacebook, IconInstagram, IconGitHub, IconTelegram } from './icons';
 import Reveal from './Reveal';
 
-const stats = [
-  { value: '8+', label: 'Years Experience' },
-  { value: '6+', label: 'Completed Projects' },
-  { value: '100%', label: 'Tools Gratis' },
-];
+const socialIcons: Record<string, (p: { size?: number }) => React.ReactElement> = {
+  Facebook: IconFacebook,
+  Instagram: IconInstagram,
+  GitHub: IconGitHub,
+  Telegram: IconTelegram,
+};
 
 export default function About() {
   return (
@@ -51,17 +53,26 @@ export default function About() {
                 menulis tutorial SEO yang mudah dipahami. Setiap tools melewati validasi penuh sebelum dirilis.
               </p>
 
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                {stats.map((s) => (
-                  <div key={s.label} className="text-center">
-                    <p className="text-2xl font-bold sm:text-3xl" style={{ color: 'var(--ink)' }}>
-                      {s.value}
-                    </p>
-                    <p className="mt-1 text-xs sm:text-sm" style={{ color: 'var(--dim)' }}>
-                      {s.label}
-                    </p>
-                  </div>
-                ))}
+              <div className="mt-8 flex items-center gap-3">
+                {socials
+                  .filter((s) => socialIcons[s.label])
+                  .map((s) => {
+                    const Icon = socialIcons[s.label];
+                    return (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-btn"
+                        data-brand={s.brand}
+                        aria-label={s.label}
+                        title={s.label}
+                      >
+                        <Icon size={18} />
+                      </a>
+                    );
+                  })}
               </div>
             </div>
           </Reveal>
