@@ -15,7 +15,16 @@ const groupIcons: Record<SkillIcon, (p: { size?: number }) => React.ReactElement
 export default function Skills() {
   const [openIndex, setOpenIndex] = useState(0);
   const [barsOn, setBarsOn] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -46,7 +55,7 @@ export default function Skills() {
         <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
           {skillGroups.map((group, gi) => {
             const Icon = groupIcons[group.icon];
-            const open = openIndex === gi;
+            const open = isDesktop || openIndex === gi;
             return (
               <Reveal key={group.title} delay={gi * 100}>
                 <div
@@ -55,7 +64,9 @@ export default function Skills() {
                 >
                   <button
                     type="button"
-                    onClick={() => setOpenIndex(open ? -1 : gi)}
+                    onClick={() => {
+                      if (!isDesktop) setOpenIndex(open ? -1 : gi);
+                    }}
                     className="flex w-full items-center gap-4 text-left"
                     aria-expanded={open}
                   >
@@ -74,6 +85,7 @@ export default function Skills() {
                       </span>
                     </span>
                     <span
+                      className="md:hidden"
                       style={{
                         color: 'var(--accent)',
                         transform: open ? 'rotate(180deg)' : 'none',
